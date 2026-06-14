@@ -34,26 +34,3 @@ To prevent the compound truncation noise across the 10 stages of the 1024-point 
 
 ---
 
-## 📂 Directory Structure
-
-The project is structured into four main folders:
-
-1. **[positfinalopti](file:///c:/SRIP/positfinalopti/)**: The core optimized Posit FFT implementation.
-   * **[rtl/](file:///c:/SRIP/positfinalopti/rtl/)**: Hardware description files for the fused Posit FFT, including [posit_fused_butterfly.v](file:///c:/SRIP/positfinalopti/rtl/posit_fused_butterfly.v), the top-level FSM controller [fft16_top_fused.v](file:///c:/SRIP/positfinalopti/rtl/fft16_top_fused.v), and basic memory wrappers.
-   * **[scripts/](file:///c:/SRIP/positfinalopti/scripts/)**: Automated sweeps to compile, simulate, and parse accuracy statistics.
-   * **[sim/](file:///c:/SRIP/positfinalopti/sim/)**: Raw input radar data vectors and simulation outputs.
-   * **[tb/](file:///c:/SRIP/positfinalopti/tb/)**: Testbenches for verification.
-   * **[docs/](file:///c:/SRIP/positfinalopti/docs/)**: Detailed reports on Scenario A & Scenario B radar simulations.
-
-2. **[fp16custom](file:///c:/SRIP/fp16custom/)**: Custom IEEE-754 Half-Precision (16-bit) baseline.
-   * Matches the control FSM, pipelining, and memory layout of the Posit design exactly.
-   * Built using custom combinational FP16 RTL operators ([fp16_add.v](file:///c:/SRIP/fp16custom/rtl/fp16_add.v), [fp16_mul.v](file:///c:/SRIP/fp16custom/rtl/fp16_mul.v)) without using vendor IP.
-
-3. **[fp32custom](file:///c:/SRIP/fp32custom/)**: Custom IEEE-754 Single-Precision (32-bit) baseline.
-   * Provides the custom FP32 arithmetic unit implementations ([fp32_add.v](file:///c:/SRIP/fp32custom/hdl/fp32_add.v), [fp32_mul.v](file:///c:/SRIP/fp32custom/hdl/fp32_mul.v)) alongside FP16 and Posit components for comparative debugging.
-
-4. **[reports2](file:///c:/SRIP/reports2/)**: Vivado synthesis and implementation reports.
-   * Categorized by bitwidth config (e.g., `P12E1` for 12-bit Posit, `FloatingPoint16`, `FPCustom32`).
-   * Contains reports for **utilization**, **power**, **timing**, and **critical path analyses** mapped directly from Vivado runs.
-
----
