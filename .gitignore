@@ -1,0 +1,11 @@
+# Ignore all files and directories in the root
+/*
+
+# Whitelist the specific folders we want to push
+!/positfinalopti/
+!/fp16custom/
+!/fp32custom/
+!/reports2/
+
+# Whitelist the gitignore file itself
+!.gitignore

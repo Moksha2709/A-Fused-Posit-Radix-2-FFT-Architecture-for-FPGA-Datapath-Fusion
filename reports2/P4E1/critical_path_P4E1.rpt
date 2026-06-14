@@ -1,0 +1,1606 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date              : Fri Jun 12 03:17:13 2026
+| Host              : LAPTOP-MHFLAL5K running 64-bit major release  (build 9200)
+| Command           : report_timing -delay_type max -max_paths 10 -file C:/SRIP/reports2/critical_path_P4E1.rpt
+| Design            : fft16_top_fused
+| Device            : xczu5ev-sfvc784
+| Speed File        : -3  PRODUCTION 1.30 05-15-2022
+| Design State      : Routed
+| Temperature Grade : E
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             88.228ns  (required time - arrival time)
+  Source:                 tw_addr_r_reg_rep[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Destination:            y1r_r_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            100.000ns  (sys_clk rise@100.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        11.685ns  (logic 3.400ns (29.096%)  route 8.285ns (70.904%))
+  Logic Levels:           31  (CARRY8=2 LUT2=2 LUT3=3 LUT4=4 LUT5=5 LUT6=14 MUXF7=1)
+  Clock Path Skew:        -0.074ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.112ns = ( 101.112 - 100.000 ) 
+    Source Clock Delay      (SCD):    1.444ns
+    Clock Pessimism Removal (CPR):    0.258ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.644ns (routing 0.001ns, distribution 0.643ns)
+  Clock Net Delay (Destination): 0.554ns (routing 0.001ns, distribution 0.553ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    E5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.458     0.458 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.458    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.458 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.314     0.772    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.800 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.644     1.444    clk_IBUF_BUFG
+    SLICE_X24Y222        FDCE                                         r  tw_addr_r_reg_rep[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X24Y222        FDCE (Prop_FFF2_SLICEM_C_Q)
+                                                      0.069     1.513 r  tw_addr_r_reg_rep[0]/Q
+                         net (fo=7, routed)           0.229     1.742    TW/y0r_r_reg[3]_i_24_0[0]
+    SLICE_X25Y222        LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.115     1.857 r  TW/y0r_r[3]_i_111/O
+                         net (fo=1, routed)           0.289     2.146    TW/y0r_r[3]_i_111_n_0
+    SLICE_X25Y222        LUT5 (Prop_D6LUT_SLICEM_I0_O)
+                                                      0.088     2.234 r  TW/y0r_r[3]_i_56/O
+                         net (fo=1, routed)           0.029     2.263    TW/y0r_r[3]_i_56_n_0
+    SLICE_X25Y222        MUXF7 (Prop_F7MUX_CD_SLICEM_I0_O)
+                                                      0.061     2.324 r  TW/y0r_r_reg[3]_i_24/O
+                         net (fo=13, routed)          0.436     2.760    TW/wr[0]
+    SLICE_X27Y215        LUT4 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.120     2.880 f  TW/y0r_r[3]_i_202/O
+                         net (fo=7, routed)           0.227     3.107    TW/BF/k_wr[0]
+    SLICE_X28Y215        LUT5 (Prop_E6LUT_SLICEM_I2_O)
+                                                      0.135     3.242 r  TW/y0r_r[3]_i_165/O
+                         net (fo=5, routed)           0.191     3.433    TW/y0r_r[3]_i_165_n_0
+    SLICE_X28Y212        LUT3 (Prop_D5LUT_SLICEM_I0_O)
+                                                      0.119     3.552 r  TW/y0r_r[3]_i_195/O
+                         net (fo=4, routed)           0.237     3.789    TW/BF/scm1[3]
+    SLICE_X28Y212        LUT4 (Prop_B5LUT_SLICEM_I3_O)
+                                                      0.148     3.937 r  TW/y0r_r[3]_i_170/O
+                         net (fo=1, routed)           0.348     4.285    TW/y0r_r[3]_i_170_n_0
+    SLICE_X28Y213        CARRY8 (Prop_CARRY8_SLICEM_DI[1]_CO[3])
+                                                      0.126     4.411 r  TW/y0r_r_reg[3]_i_97/CO[3]
+                         net (fo=1, routed)           0.181     4.592    TW/BF/SUB_Tr/sign_l20_in
+    SLICE_X28Y213        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.138     4.730 r  TW/y0r_r[3]_i_48/O
+                         net (fo=20, routed)          0.277     5.007    TW/y0r_r[3]_i_48_n_0
+    SLICE_X27Y211        LUT3 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.141     5.148 r  TW/y0r_r[3]_i_212/O
+                         net (fo=7, routed)           0.525     5.674    TW/y0r_r[3]_i_212_n_0
+    SLICE_X25Y211        LUT2 (Prop_B5LUT_SLICEM_I1_O)
+                                                      0.148     5.822 r  TW/y0r_r[3]_i_230/O
+                         net (fo=4, routed)           0.215     6.036    TW/y0r_r[3]_i_230_n_0
+    SLICE_X25Y210        LUT3 (Prop_D5LUT_SLICEM_I1_O)
+                                                      0.085     6.121 r  TW/y0r_r[3]_i_209/O
+                         net (fo=1, routed)           0.236     6.357    TW/y0r_r[3]_i_209_n_0
+    SLICE_X27Y210        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.135     6.492 r  TW/y0r_r[3]_i_141/O
+                         net (fo=4, routed)           0.197     6.690    TW/y0r_r[3]_i_141_n_0
+    SLICE_X26Y210        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.090     6.780 f  TW/y0r_r[3]_i_146/O
+                         net (fo=11, routed)          0.150     6.929    TW/y0r_r[3]_i_146_n_0
+    SLICE_X25Y211        LUT6 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.115     7.044 r  TW/y0r_r[3]_i_190/O
+                         net (fo=2, routed)           0.219     7.263    TW/y0r_r[3]_i_190_n_0
+    SLICE_X25Y210        LUT6 (Prop_H6LUT_SLICEM_I3_O)
+                                                      0.138     7.401 r  TW/y0r_r[3]_i_109/O
+                         net (fo=12, routed)          0.590     7.991    TW/BF/sc_tr[5]
+    SLICE_X23Y201        LUT5 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.133     8.124 f  TW/y0r_r[3]_i_153/O
+                         net (fo=4, routed)           0.208     8.333    TW/y0r_r[3]_i_153_n_0
+    SLICE_X25Y200        LUT6 (Prop_C6LUT_SLICEM_I5_O)
+                                                      0.088     8.421 r  TW/y1r_r[3]_i_41/O
+                         net (fo=1, routed)           0.025     8.446    TW/y1r_r[3]_i_41_n_0
+    SLICE_X25Y200        CARRY8 (Prop_CARRY8_SLICEM_S[2]_CO[3])
+                                                      0.131     8.577 r  TW/y1r_r_reg[3]_i_21/CO[3]
+                         net (fo=11, routed)          0.144     8.721    TW/BF/SUB_y1r/sign_l20_in
+    SLICE_X25Y201        LUT6 (Prop_D6LUT_SLICEM_I0_O)
+                                                      0.031     8.752 r  TW/y1r_r[3]_i_11/O
+                         net (fo=30, routed)          0.414     9.166    TW/y1r_r[3]_i_11_n_0
+    SLICE_X23Y200        LUT5 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.114     9.280 f  TW/y1r_r[3]_i_26/O
+                         net (fo=2, routed)           0.292     9.572    TW/y1r_r[3]_i_26_n_0
+    SLICE_X25Y199        LUT6 (Prop_C6LUT_SLICEM_I0_O)
+                                                      0.081     9.653 r  TW/y1r_r[3]_i_13/O
+                         net (fo=11, routed)          0.321     9.974    TW/y1r_r[3]_i_13_n_0
+    SLICE_X26Y200        LUT5 (Prop_H6LUT_SLICEL_I3_O)
+                                                      0.049    10.023 r  TW/y1r_r[2]_i_69/O
+                         net (fo=2, routed)           0.092    10.115    TW/y1r_r[2]_i_69_n_0
+    SLICE_X26Y201        LUT6 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.114    10.229 f  TW/y1r_r[2]_i_36/O
+                         net (fo=12, routed)          0.331    10.561    TW/y1r_r[2]_i_36_n_0
+    SLICE_X27Y203        LUT4 (Prop_D6LUT_SLICEL_I2_O)
+                                                      0.089    10.650 f  TW/y1r_r[2]_i_37/O
+                         net (fo=4, routed)           0.234    10.884    TW/y1r_r[2]_i_37_n_0
+    SLICE_X26Y202        LUT6 (Prop_H6LUT_SLICEL_I4_O)
+                                                      0.082    10.966 f  TW/y1r_r[2]_i_38/O
+                         net (fo=11, routed)          0.483    11.449    TW/y1r_r[2]_i_38_n_0
+    SLICE_X28Y205        LUT4 (Prop_D5LUT_SLICEM_I2_O)
+                                                      0.085    11.534 r  TW/y1r_r[2]_i_46/O
+                         net (fo=1, routed)           0.215    11.749    TW/y1r_r[2]_i_46_n_0
+    SLICE_X28Y205        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.082    11.831 f  TW/y1r_r[2]_i_16/O
+                         net (fo=2, routed)           0.200    12.031    TW/BF/sc_y1r[4]
+    SLICE_X27Y206        LUT6 (Prop_H6LUT_SLICEL_I2_O)
+                                                      0.082    12.113 r  TW/y1r_r[2]_i_10/O
+                         net (fo=5, routed)           0.497    12.610    TW/y1r_r[2]_i_10_n_0
+    SLICE_X24Y206        LUT6 (Prop_E6LUT_SLICEM_I5_O)
+                                                      0.135    12.745 r  TW/y1r_r[1]_i_3/O
+                         net (fo=2, routed)           0.202    12.947    TW/y1r_r[1]_i_3_n_0
+    SLICE_X26Y207        LUT2 (Prop_D6LUT_SLICEL_I0_O)
+                                                      0.133    13.080 r  TW/y1r_r[0]_i_1/O
+                         net (fo=1, routed)           0.049    13.129    y1r[0]
+    SLICE_X26Y207        FDCE                                         r  y1r_r_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)  100.000   100.000 r  
+    E5                                                0.000   100.000 r  clk (IN)
+                         net (fo=0)                   0.000   100.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.255   100.255 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000   100.255    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000   100.255 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.279   100.534    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024   100.558 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.554   101.112    clk_IBUF_BUFG
+    SLICE_X26Y207        FDCE                                         r  y1r_r_reg[0]/C
+                         clock pessimism              0.258   101.370    
+                         clock uncertainty           -0.035   101.334    
+    SLICE_X26Y207        FDCE (Setup_DFF_SLICEL_C_D)
+                                                      0.023   101.357    y1r_r_reg[0]
+  -------------------------------------------------------------------
+                         required time                        101.357    
+                         arrival time                         -13.129    
+  -------------------------------------------------------------------
+                         slack                                 88.228    
+
+Slack (MET) :             88.363ns  (required time - arrival time)
+  Source:                 tw_addr_r_reg_rep[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Destination:            y1r_r_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            100.000ns  (sys_clk rise@100.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        11.560ns  (logic 3.348ns (28.961%)  route 8.212ns (71.039%))
+  Logic Levels:           31  (CARRY8=2 LUT2=1 LUT3=3 LUT4=4 LUT5=6 LUT6=14 MUXF7=1)
+  Clock Path Skew:        -0.064ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.122ns = ( 101.122 - 100.000 ) 
+    Source Clock Delay      (SCD):    1.444ns
+    Clock Pessimism Removal (CPR):    0.258ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.644ns (routing 0.001ns, distribution 0.643ns)
+  Clock Net Delay (Destination): 0.564ns (routing 0.001ns, distribution 0.563ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    E5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.458     0.458 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.458    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.458 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.314     0.772    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.800 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.644     1.444    clk_IBUF_BUFG
+    SLICE_X24Y222        FDCE                                         r  tw_addr_r_reg_rep[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X24Y222        FDCE (Prop_FFF2_SLICEM_C_Q)
+                                                      0.069     1.513 r  tw_addr_r_reg_rep[0]/Q
+                         net (fo=7, routed)           0.229     1.742    TW/y0r_r_reg[3]_i_24_0[0]
+    SLICE_X25Y222        LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.115     1.857 r  TW/y0r_r[3]_i_111/O
+                         net (fo=1, routed)           0.289     2.146    TW/y0r_r[3]_i_111_n_0
+    SLICE_X25Y222        LUT5 (Prop_D6LUT_SLICEM_I0_O)
+                                                      0.088     2.234 r  TW/y0r_r[3]_i_56/O
+                         net (fo=1, routed)           0.029     2.263    TW/y0r_r[3]_i_56_n_0
+    SLICE_X25Y222        MUXF7 (Prop_F7MUX_CD_SLICEM_I0_O)
+                                                      0.061     2.324 r  TW/y0r_r_reg[3]_i_24/O
+                         net (fo=13, routed)          0.436     2.760    TW/wr[0]
+    SLICE_X27Y215        LUT4 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.120     2.880 f  TW/y0r_r[3]_i_202/O
+                         net (fo=7, routed)           0.227     3.107    TW/BF/k_wr[0]
+    SLICE_X28Y215        LUT5 (Prop_E6LUT_SLICEM_I2_O)
+                                                      0.135     3.242 r  TW/y0r_r[3]_i_165/O
+                         net (fo=5, routed)           0.191     3.433    TW/y0r_r[3]_i_165_n_0
+    SLICE_X28Y212        LUT3 (Prop_D5LUT_SLICEM_I0_O)
+                                                      0.119     3.552 r  TW/y0r_r[3]_i_195/O
+                         net (fo=4, routed)           0.237     3.789    TW/BF/scm1[3]
+    SLICE_X28Y212        LUT4 (Prop_B5LUT_SLICEM_I3_O)
+                                                      0.148     3.937 r  TW/y0r_r[3]_i_170/O
+                         net (fo=1, routed)           0.348     4.285    TW/y0r_r[3]_i_170_n_0
+    SLICE_X28Y213        CARRY8 (Prop_CARRY8_SLICEM_DI[1]_CO[3])
+                                                      0.126     4.411 r  TW/y0r_r_reg[3]_i_97/CO[3]
+                         net (fo=1, routed)           0.181     4.592    TW/BF/SUB_Tr/sign_l20_in
+    SLICE_X28Y213        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.138     4.730 r  TW/y0r_r[3]_i_48/O
+                         net (fo=20, routed)          0.277     5.007    TW/y0r_r[3]_i_48_n_0
+    SLICE_X27Y211        LUT3 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.141     5.148 r  TW/y0r_r[3]_i_212/O
+                         net (fo=7, routed)           0.525     5.674    TW/y0r_r[3]_i_212_n_0
+    SLICE_X25Y211        LUT2 (Prop_B5LUT_SLICEM_I1_O)
+                                                      0.148     5.822 r  TW/y0r_r[3]_i_230/O
+                         net (fo=4, routed)           0.215     6.036    TW/y0r_r[3]_i_230_n_0
+    SLICE_X25Y210        LUT3 (Prop_D5LUT_SLICEM_I1_O)
+                                                      0.085     6.121 r  TW/y0r_r[3]_i_209/O
+                         net (fo=1, routed)           0.236     6.357    TW/y0r_r[3]_i_209_n_0
+    SLICE_X27Y210        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.135     6.492 r  TW/y0r_r[3]_i_141/O
+                         net (fo=4, routed)           0.197     6.690    TW/y0r_r[3]_i_141_n_0
+    SLICE_X26Y210        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.090     6.780 f  TW/y0r_r[3]_i_146/O
+                         net (fo=11, routed)          0.150     6.929    TW/y0r_r[3]_i_146_n_0
+    SLICE_X25Y211        LUT6 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.115     7.044 r  TW/y0r_r[3]_i_190/O
+                         net (fo=2, routed)           0.219     7.263    TW/y0r_r[3]_i_190_n_0
+    SLICE_X25Y210        LUT6 (Prop_H6LUT_SLICEM_I3_O)
+                                                      0.138     7.401 r  TW/y0r_r[3]_i_109/O
+                         net (fo=12, routed)          0.590     7.991    TW/BF/sc_tr[5]
+    SLICE_X23Y201        LUT5 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.133     8.124 f  TW/y0r_r[3]_i_153/O
+                         net (fo=4, routed)           0.208     8.333    TW/y0r_r[3]_i_153_n_0
+    SLICE_X25Y200        LUT6 (Prop_C6LUT_SLICEM_I5_O)
+                                                      0.088     8.421 r  TW/y1r_r[3]_i_41/O
+                         net (fo=1, routed)           0.025     8.446    TW/y1r_r[3]_i_41_n_0
+    SLICE_X25Y200        CARRY8 (Prop_CARRY8_SLICEM_S[2]_CO[3])
+                                                      0.131     8.577 r  TW/y1r_r_reg[3]_i_21/CO[3]
+                         net (fo=11, routed)          0.144     8.721    TW/BF/SUB_y1r/sign_l20_in
+    SLICE_X25Y201        LUT6 (Prop_D6LUT_SLICEM_I0_O)
+                                                      0.031     8.752 r  TW/y1r_r[3]_i_11/O
+                         net (fo=30, routed)          0.414     9.166    TW/y1r_r[3]_i_11_n_0
+    SLICE_X23Y200        LUT5 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.114     9.280 f  TW/y1r_r[3]_i_26/O
+                         net (fo=2, routed)           0.292     9.572    TW/y1r_r[3]_i_26_n_0
+    SLICE_X25Y199        LUT6 (Prop_C6LUT_SLICEM_I0_O)
+                                                      0.081     9.653 r  TW/y1r_r[3]_i_13/O
+                         net (fo=11, routed)          0.321     9.974    TW/y1r_r[3]_i_13_n_0
+    SLICE_X26Y200        LUT5 (Prop_H6LUT_SLICEL_I3_O)
+                                                      0.049    10.023 r  TW/y1r_r[2]_i_69/O
+                         net (fo=2, routed)           0.092    10.115    TW/y1r_r[2]_i_69_n_0
+    SLICE_X26Y201        LUT6 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.114    10.229 f  TW/y1r_r[2]_i_36/O
+                         net (fo=12, routed)          0.331    10.561    TW/y1r_r[2]_i_36_n_0
+    SLICE_X27Y203        LUT4 (Prop_D6LUT_SLICEL_I2_O)
+                                                      0.089    10.650 f  TW/y1r_r[2]_i_37/O
+                         net (fo=4, routed)           0.234    10.884    TW/y1r_r[2]_i_37_n_0
+    SLICE_X26Y202        LUT6 (Prop_H6LUT_SLICEL_I4_O)
+                                                      0.082    10.966 f  TW/y1r_r[2]_i_38/O
+                         net (fo=11, routed)          0.483    11.449    TW/y1r_r[2]_i_38_n_0
+    SLICE_X28Y205        LUT4 (Prop_D5LUT_SLICEM_I2_O)
+                                                      0.085    11.534 r  TW/y1r_r[2]_i_46/O
+                         net (fo=1, routed)           0.215    11.749    TW/y1r_r[2]_i_46_n_0
+    SLICE_X28Y205        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.082    11.831 f  TW/y1r_r[2]_i_16/O
+                         net (fo=2, routed)           0.200    12.031    TW/BF/sc_y1r[4]
+    SLICE_X27Y206        LUT6 (Prop_H6LUT_SLICEL_I2_O)
+                                                      0.082    12.113 r  TW/y1r_r[2]_i_10/O
+                         net (fo=5, routed)           0.497    12.610    TW/y1r_r[2]_i_10_n_0
+    SLICE_X24Y206        LUT6 (Prop_E6LUT_SLICEM_I5_O)
+                                                      0.135    12.745 r  TW/y1r_r[1]_i_3/O
+                         net (fo=2, routed)           0.107    12.852    TW/y1r_r[1]_i_3_n_0
+    SLICE_X25Y206        LUT5 (Prop_D6LUT_SLICEM_I3_O)
+                                                      0.081    12.933 r  TW/y1r_r[1]_i_1/O
+                         net (fo=1, routed)           0.071    13.004    y1r[1]
+    SLICE_X25Y206        FDCE                                         r  y1r_r_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)  100.000   100.000 r  
+    E5                                                0.000   100.000 r  clk (IN)
+                         net (fo=0)                   0.000   100.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.255   100.255 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000   100.255    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000   100.255 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.279   100.534    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024   100.558 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.564   101.122    clk_IBUF_BUFG
+    SLICE_X25Y206        FDCE                                         r  y1r_r_reg[1]/C
+                         clock pessimism              0.258   101.380    
+                         clock uncertainty           -0.035   101.344    
+    SLICE_X25Y206        FDCE (Setup_DFF_SLICEM_C_D)
+                                                      0.023   101.367    y1r_r_reg[1]
+  -------------------------------------------------------------------
+                         required time                        101.367    
+                         arrival time                         -13.004    
+  -------------------------------------------------------------------
+                         slack                                 88.363    
+
+Slack (MET) :             88.461ns  (required time - arrival time)
+  Source:                 tw_addr_r_reg_rep[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Destination:            y1r_r_reg[2]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            100.000ns  (sys_clk rise@100.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        11.463ns  (logic 3.358ns (29.295%)  route 8.105ns (70.705%))
+  Logic Levels:           31  (CARRY8=2 LUT2=1 LUT3=3 LUT4=4 LUT5=5 LUT6=15 MUXF7=1)
+  Clock Path Skew:        -0.064ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.122ns = ( 101.122 - 100.000 ) 
+    Source Clock Delay      (SCD):    1.444ns
+    Clock Pessimism Removal (CPR):    0.258ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.644ns (routing 0.001ns, distribution 0.643ns)
+  Clock Net Delay (Destination): 0.564ns (routing 0.001ns, distribution 0.563ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    E5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.458     0.458 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.458    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.458 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.314     0.772    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.800 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.644     1.444    clk_IBUF_BUFG
+    SLICE_X24Y222        FDCE                                         r  tw_addr_r_reg_rep[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X24Y222        FDCE (Prop_FFF2_SLICEM_C_Q)
+                                                      0.069     1.513 r  tw_addr_r_reg_rep[0]/Q
+                         net (fo=7, routed)           0.229     1.742    TW/y0r_r_reg[3]_i_24_0[0]
+    SLICE_X25Y222        LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.115     1.857 r  TW/y0r_r[3]_i_111/O
+                         net (fo=1, routed)           0.289     2.146    TW/y0r_r[3]_i_111_n_0
+    SLICE_X25Y222        LUT5 (Prop_D6LUT_SLICEM_I0_O)
+                                                      0.088     2.234 r  TW/y0r_r[3]_i_56/O
+                         net (fo=1, routed)           0.029     2.263    TW/y0r_r[3]_i_56_n_0
+    SLICE_X25Y222        MUXF7 (Prop_F7MUX_CD_SLICEM_I0_O)
+                                                      0.061     2.324 r  TW/y0r_r_reg[3]_i_24/O
+                         net (fo=13, routed)          0.436     2.760    TW/wr[0]
+    SLICE_X27Y215        LUT4 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.120     2.880 f  TW/y0r_r[3]_i_202/O
+                         net (fo=7, routed)           0.227     3.107    TW/BF/k_wr[0]
+    SLICE_X28Y215        LUT5 (Prop_E6LUT_SLICEM_I2_O)
+                                                      0.135     3.242 r  TW/y0r_r[3]_i_165/O
+                         net (fo=5, routed)           0.191     3.433    TW/y0r_r[3]_i_165_n_0
+    SLICE_X28Y212        LUT3 (Prop_D5LUT_SLICEM_I0_O)
+                                                      0.119     3.552 r  TW/y0r_r[3]_i_195/O
+                         net (fo=4, routed)           0.237     3.789    TW/BF/scm1[3]
+    SLICE_X28Y212        LUT4 (Prop_B5LUT_SLICEM_I3_O)
+                                                      0.148     3.937 r  TW/y0r_r[3]_i_170/O
+                         net (fo=1, routed)           0.348     4.285    TW/y0r_r[3]_i_170_n_0
+    SLICE_X28Y213        CARRY8 (Prop_CARRY8_SLICEM_DI[1]_CO[3])
+                                                      0.126     4.411 r  TW/y0r_r_reg[3]_i_97/CO[3]
+                         net (fo=1, routed)           0.181     4.592    TW/BF/SUB_Tr/sign_l20_in
+    SLICE_X28Y213        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.138     4.730 r  TW/y0r_r[3]_i_48/O
+                         net (fo=20, routed)          0.277     5.007    TW/y0r_r[3]_i_48_n_0
+    SLICE_X27Y211        LUT3 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.141     5.148 r  TW/y0r_r[3]_i_212/O
+                         net (fo=7, routed)           0.525     5.674    TW/y0r_r[3]_i_212_n_0
+    SLICE_X25Y211        LUT2 (Prop_B5LUT_SLICEM_I1_O)
+                                                      0.148     5.822 r  TW/y0r_r[3]_i_230/O
+                         net (fo=4, routed)           0.215     6.036    TW/y0r_r[3]_i_230_n_0
+    SLICE_X25Y210        LUT3 (Prop_D5LUT_SLICEM_I1_O)
+                                                      0.085     6.121 r  TW/y0r_r[3]_i_209/O
+                         net (fo=1, routed)           0.236     6.357    TW/y0r_r[3]_i_209_n_0
+    SLICE_X27Y210        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.135     6.492 r  TW/y0r_r[3]_i_141/O
+                         net (fo=4, routed)           0.197     6.690    TW/y0r_r[3]_i_141_n_0
+    SLICE_X26Y210        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.090     6.780 f  TW/y0r_r[3]_i_146/O
+                         net (fo=11, routed)          0.150     6.929    TW/y0r_r[3]_i_146_n_0
+    SLICE_X25Y211        LUT6 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.115     7.044 r  TW/y0r_r[3]_i_190/O
+                         net (fo=2, routed)           0.219     7.263    TW/y0r_r[3]_i_190_n_0
+    SLICE_X25Y210        LUT6 (Prop_H6LUT_SLICEM_I3_O)
+                                                      0.138     7.401 r  TW/y0r_r[3]_i_109/O
+                         net (fo=12, routed)          0.590     7.991    TW/BF/sc_tr[5]
+    SLICE_X23Y201        LUT5 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.133     8.124 f  TW/y0r_r[3]_i_153/O
+                         net (fo=4, routed)           0.208     8.333    TW/y0r_r[3]_i_153_n_0
+    SLICE_X25Y200        LUT6 (Prop_C6LUT_SLICEM_I5_O)
+                                                      0.088     8.421 r  TW/y1r_r[3]_i_41/O
+                         net (fo=1, routed)           0.025     8.446    TW/y1r_r[3]_i_41_n_0
+    SLICE_X25Y200        CARRY8 (Prop_CARRY8_SLICEM_S[2]_CO[3])
+                                                      0.131     8.577 r  TW/y1r_r_reg[3]_i_21/CO[3]
+                         net (fo=11, routed)          0.144     8.721    TW/BF/SUB_y1r/sign_l20_in
+    SLICE_X25Y201        LUT6 (Prop_D6LUT_SLICEM_I0_O)
+                                                      0.031     8.752 r  TW/y1r_r[3]_i_11/O
+                         net (fo=30, routed)          0.414     9.166    TW/y1r_r[3]_i_11_n_0
+    SLICE_X23Y200        LUT5 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.114     9.280 f  TW/y1r_r[3]_i_26/O
+                         net (fo=2, routed)           0.292     9.572    TW/y1r_r[3]_i_26_n_0
+    SLICE_X25Y199        LUT6 (Prop_C6LUT_SLICEM_I0_O)
+                                                      0.081     9.653 r  TW/y1r_r[3]_i_13/O
+                         net (fo=11, routed)          0.321     9.974    TW/y1r_r[3]_i_13_n_0
+    SLICE_X26Y200        LUT5 (Prop_H6LUT_SLICEL_I3_O)
+                                                      0.049    10.023 r  TW/y1r_r[2]_i_69/O
+                         net (fo=2, routed)           0.092    10.115    TW/y1r_r[2]_i_69_n_0
+    SLICE_X26Y201        LUT6 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.114    10.229 f  TW/y1r_r[2]_i_36/O
+                         net (fo=12, routed)          0.331    10.561    TW/y1r_r[2]_i_36_n_0
+    SLICE_X27Y203        LUT4 (Prop_D6LUT_SLICEL_I2_O)
+                                                      0.089    10.650 f  TW/y1r_r[2]_i_37/O
+                         net (fo=4, routed)           0.234    10.884    TW/y1r_r[2]_i_37_n_0
+    SLICE_X26Y202        LUT6 (Prop_H6LUT_SLICEL_I4_O)
+                                                      0.082    10.966 f  TW/y1r_r[2]_i_38/O
+                         net (fo=11, routed)          0.483    11.449    TW/y1r_r[2]_i_38_n_0
+    SLICE_X28Y205        LUT4 (Prop_D5LUT_SLICEM_I2_O)
+                                                      0.085    11.534 r  TW/y1r_r[2]_i_46/O
+                         net (fo=1, routed)           0.215    11.749    TW/y1r_r[2]_i_46_n_0
+    SLICE_X28Y205        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.082    11.831 f  TW/y1r_r[2]_i_16/O
+                         net (fo=2, routed)           0.200    12.031    TW/BF/sc_y1r[4]
+    SLICE_X27Y206        LUT6 (Prop_H6LUT_SLICEL_I2_O)
+                                                      0.082    12.113 r  TW/y1r_r[2]_i_10/O
+                         net (fo=5, routed)           0.418    12.531    TW/y1r_r[2]_i_10_n_0
+    SLICE_X25Y206        LUT6 (Prop_H6LUT_SLICEM_I3_O)
+                                                      0.138    12.669 r  TW/y1r_r[2]_i_3/O
+                         net (fo=1, routed)           0.084    12.753    TW/y1r_r[2]_i_3_n_0
+    SLICE_X25Y206        LUT6 (Prop_C6LUT_SLICEM_I1_O)
+                                                      0.088    12.841 r  TW/y1r_r[2]_i_1/O
+                         net (fo=1, routed)           0.065    12.906    y1r[2]
+    SLICE_X25Y206        FDCE                                         r  y1r_r_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)  100.000   100.000 r  
+    E5                                                0.000   100.000 r  clk (IN)
+                         net (fo=0)                   0.000   100.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.255   100.255 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000   100.255    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000   100.255 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.279   100.534    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024   100.558 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.564   101.122    clk_IBUF_BUFG
+    SLICE_X25Y206        FDCE                                         r  y1r_r_reg[2]/C
+                         clock pessimism              0.258   101.380    
+                         clock uncertainty           -0.035   101.344    
+    SLICE_X25Y206        FDCE (Setup_CFF_SLICEM_C_D)
+                                                      0.023   101.367    y1r_r_reg[2]
+  -------------------------------------------------------------------
+                         required time                        101.367    
+                         arrival time                         -12.906    
+  -------------------------------------------------------------------
+                         slack                                 88.461    
+
+Slack (MET) :             88.574ns  (required time - arrival time)
+  Source:                 tw_addr_r_reg[4]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Destination:            y0i_r_reg[2]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            100.000ns  (sys_clk rise@100.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        11.350ns  (logic 3.399ns (29.946%)  route 7.951ns (70.054%))
+  Logic Levels:           30  (CARRY8=2 LUT2=1 LUT3=1 LUT4=8 LUT5=7 LUT6=10 MUXF7=1)
+  Clock Path Skew:        -0.063ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.123ns = ( 101.123 - 100.000 ) 
+    Source Clock Delay      (SCD):    1.444ns
+    Clock Pessimism Removal (CPR):    0.258ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.644ns (routing 0.001ns, distribution 0.643ns)
+  Clock Net Delay (Destination): 0.565ns (routing 0.001ns, distribution 0.564ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    E5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.458     0.458 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.458    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.458 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.314     0.772    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.800 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.644     1.444    clk_IBUF_BUFG
+    SLICE_X25Y225        FDCE                                         r  tw_addr_r_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X25Y225        FDCE (Prop_EFF2_SLICEM_C_Q)
+                                                      0.069     1.513 r  tw_addr_r_reg[4]/Q
+                         net (fo=7, routed)           0.156     1.669    TW/y0r_r[3]_i_135_0[4]
+    SLICE_X25Y223        LUT4 (Prop_C5LUT_SLICEM_I3_O)
+                                                      0.142     1.811 r  TW/y0r_r[3]_i_205/O
+                         net (fo=1, routed)           0.254     2.065    TW/y0r_r[3]_i_205_n_0
+    SLICE_X26Y223        LUT6 (Prop_D6LUT_SLICEL_I2_O)
+                                                      0.114     2.179 r  TW/y0r_r[3]_i_134/O
+                         net (fo=1, routed)           0.012     2.191    TW/y0r_r[3]_i_134_n_0
+    SLICE_X26Y223        MUXF7 (Prop_F7MUX_CD_SLICEL_I0_O)
+                                                      0.054     2.245 r  TW/y0r_r_reg[3]_i_69/O
+                         net (fo=12, routed)          0.417     2.661    TW/wi[0]
+    SLICE_X28Y216        LUT5 (Prop_H5LUT_SLICEM_I3_O)
+                                                      0.120     2.781 r  TW/y0i_r[3]_i_200/O
+                         net (fo=3, routed)           0.178     2.959    TW/y0i_r[3]_i_200_n_0
+    SLICE_X27Y215        LUT4 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.134     3.093 r  TW/y0i_r[3]_i_153/O
+                         net (fo=8, routed)           0.541     3.634    TW/BF/scm3[2]
+    SLICE_X25Y216        LUT4 (Prop_B5LUT_SLICEM_I0_O)
+                                                      0.126     3.760 r  TW/y0i_r[3]_i_136/O
+                         net (fo=1, routed)           0.231     3.991    TW/y0i_r[3]_i_136_n_0
+    SLICE_X24Y217        CARRY8 (Prop_CARRY8_SLICEM_DI[1]_CO[3])
+                                                      0.126     4.117 r  TW/y0i_r_reg[3]_i_74/CO[3]
+                         net (fo=1, routed)           0.220     4.337    TW/BF/ADD_Ti/sign_l20_in
+    SLICE_X25Y217        LUT6 (Prop_G6LUT_SLICEM_I0_O)
+                                                      0.031     4.368 r  TW/y0i_r[3]_i_36/O
+                         net (fo=22, routed)          0.216     4.584    TW/y0i_r[3]_i_36_n_0
+    SLICE_X25Y218        LUT3 (Prop_D5LUT_SLICEM_I1_O)
+                                                      0.085     4.669 r  TW/y0i_r[3]_i_170/O
+                         net (fo=9, routed)           0.149     4.818    TW/y0i_r[3]_i_170_n_0
+    SLICE_X25Y217        LUT6 (Prop_F6LUT_SLICEM_I2_O)
+                                                      0.134     4.952 r  TW/y0i_r[3]_i_95/O
+                         net (fo=6, routed)           0.437     5.390    TW/y0i_r[3]_i_95_n_0
+    SLICE_X27Y216        LUT4 (Prop_H5LUT_SLICEL_I2_O)
+                                                      0.086     5.476 r  TW/y0i_r[3]_i_181/O
+                         net (fo=3, routed)           0.306     5.782    TW/y0i_r[3]_i_181_n_0
+    SLICE_X28Y217        LUT5 (Prop_F6LUT_SLICEM_I0_O)
+                                                      0.134     5.916 f  TW/y0i_r[3]_i_112/O
+                         net (fo=4, routed)           0.324     6.240    TW/y0i_r[3]_i_112_n_0
+    SLICE_X26Y218        LUT5 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.134     6.374 f  TW/y0i_r[3]_i_194/O
+                         net (fo=4, routed)           0.113     6.487    TW/y0i_r[3]_i_194_n_0
+    SLICE_X26Y218        LUT5 (Prop_H5LUT_SLICEL_I4_O)
+                                                      0.142     6.629 r  TW/y0i_r[3]_i_160/O
+                         net (fo=1, routed)           0.212     6.841    TW/y0i_r[3]_i_160_n_0
+    SLICE_X26Y218        LUT6 (Prop_F6LUT_SLICEL_I4_O)
+                                                      0.133     6.974 r  TW/y0i_r[3]_i_90/O
+                         net (fo=13, routed)          0.507     7.481    TW/BF/sc_ti[4]
+    SLICE_X27Y233        LUT5 (Prop_D6LUT_SLICEL_I4_O)
+                                                      0.089     7.570 f  TW/y0i_r[3]_i_42/O
+                         net (fo=4, routed)           0.330     7.900    TW/y0i_r[3]_i_42_n_0
+    SLICE_X27Y229        LUT2 (Prop_C6LUT_SLICEL_I1_O)
+                                                      0.113     8.013 r  TW/y0i_r[3]_i_86/O
+                         net (fo=1, routed)           0.013     8.026    TW/y0i_r[3]_i_86_n_0
+    SLICE_X27Y229        CARRY8 (Prop_CARRY8_SLICEL_S[2]_CO[3])
+                                                      0.128     8.154 r  TW/y0i_r_reg[3]_i_39/CO[3]
+                         net (fo=10, routed)          0.232     8.386    TW/BF/ADD_y0i/sign_l20_in
+    SLICE_X27Y229        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.135     8.521 r  TW/y0i_r[3]_i_17/O
+                         net (fo=27, routed)          0.286     8.807    TW/y0i_r[3]_i_17_n_0
+    SLICE_X28Y232        LUT4 (Prop_B5LUT_SLICEM_I2_O)
+                                                      0.126     8.933 r  TW/y0i_r[3]_i_32/O
+                         net (fo=5, routed)           0.343     9.276    TW/y0i_r[3]_i_32_n_0
+    SLICE_X27Y233        LUT4 (Prop_H5LUT_SLICEL_I2_O)
+                                                      0.060     9.336 f  TW/y0i_r[3]_i_25/O
+                         net (fo=2, routed)           0.113     9.449    TW/y0i_r[3]_i_25_n_0
+    SLICE_X28Y233        LUT4 (Prop_B5LUT_SLICEM_I0_O)
+                                                      0.067     9.516 f  TW/y0i_r[3]_i_11/O
+                         net (fo=6, routed)           0.270     9.786    TW/y0i_r[3]_i_11_n_0
+    SLICE_X29Y232        LUT4 (Prop_G6LUT_SLICEM_I2_O)
+                                                      0.089     9.875 f  TW/y0i_r[2]_i_51/O
+                         net (fo=2, routed)           0.112     9.987    TW/y0i_r[2]_i_51_n_0
+    SLICE_X28Y232        LUT5 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.114    10.101 f  TW/y0i_r[2]_i_41/O
+                         net (fo=4, routed)           0.248    10.349    TW/y0i_r[2]_i_41_n_0
+    SLICE_X27Y234        LUT5 (Prop_D5LUT_SLICEL_I0_O)
+                                                      0.086    10.435 r  TW/y0i_r[2]_i_39/O
+                         net (fo=5, routed)           0.335    10.770    TW/y0i_r[2]_i_39_n_0
+    SLICE_X25Y236        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.135    10.905 r  TW/y0i_r[1]_i_25/O
+                         net (fo=1, routed)           0.276    11.181    TW/y0i_r[1]_i_25_n_0
+    SLICE_X26Y235        LUT6 (Prop_C6LUT_SLICEL_I5_O)
+                                                      0.133    11.314 f  TW/y0i_r[1]_i_7/O
+                         net (fo=2, routed)           0.336    11.650    TW/BF/sc_y0i[4]
+    SLICE_X28Y233        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.138    11.788 r  TW/y0i_r[1]_i_3/O
+                         net (fo=5, routed)           0.474    12.262    TW/y0i_r[1]_i_3_n_0
+    SLICE_X26Y233        LUT6 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.134    12.396 r  TW/y0i_r[2]_i_3/O
+                         net (fo=1, routed)           0.239    12.635    TW/y0i_r[2]_i_3_n_0
+    SLICE_X24Y233        LUT6 (Prop_D6LUT_SLICEM_I1_O)
+                                                      0.088    12.723 r  TW/y0i_r[2]_i_1/O
+                         net (fo=1, routed)           0.071    12.794    y0i[2]
+    SLICE_X24Y233        FDCE                                         r  y0i_r_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)  100.000   100.000 r  
+    E5                                                0.000   100.000 r  clk (IN)
+                         net (fo=0)                   0.000   100.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.255   100.255 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000   100.255    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000   100.255 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.279   100.534    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024   100.558 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.565   101.123    clk_IBUF_BUFG
+    SLICE_X24Y233        FDCE                                         r  y0i_r_reg[2]/C
+                         clock pessimism              0.258   101.381    
+                         clock uncertainty           -0.035   101.345    
+    SLICE_X24Y233        FDCE (Setup_DFF_SLICEM_C_D)
+                                                      0.023   101.368    y0i_r_reg[2]
+  -------------------------------------------------------------------
+                         required time                        101.368    
+                         arrival time                         -12.794    
+  -------------------------------------------------------------------
+                         slack                                 88.574    
+
+Slack (MET) :             88.607ns  (required time - arrival time)
+  Source:                 tw_addr_r_reg[4]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Destination:            y0i_r_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            100.000ns  (sys_clk rise@100.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        11.317ns  (logic 3.399ns (30.034%)  route 7.918ns (69.966%))
+  Logic Levels:           30  (CARRY8=2 LUT2=1 LUT3=1 LUT4=8 LUT5=8 LUT6=9 MUXF7=1)
+  Clock Path Skew:        -0.064ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.122ns = ( 101.122 - 100.000 ) 
+    Source Clock Delay      (SCD):    1.444ns
+    Clock Pessimism Removal (CPR):    0.258ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.644ns (routing 0.001ns, distribution 0.643ns)
+  Clock Net Delay (Destination): 0.564ns (routing 0.001ns, distribution 0.563ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    E5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.458     0.458 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.458    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.458 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.314     0.772    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.800 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.644     1.444    clk_IBUF_BUFG
+    SLICE_X25Y225        FDCE                                         r  tw_addr_r_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X25Y225        FDCE (Prop_EFF2_SLICEM_C_Q)
+                                                      0.069     1.513 r  tw_addr_r_reg[4]/Q
+                         net (fo=7, routed)           0.156     1.669    TW/y0r_r[3]_i_135_0[4]
+    SLICE_X25Y223        LUT4 (Prop_C5LUT_SLICEM_I3_O)
+                                                      0.142     1.811 r  TW/y0r_r[3]_i_205/O
+                         net (fo=1, routed)           0.254     2.065    TW/y0r_r[3]_i_205_n_0
+    SLICE_X26Y223        LUT6 (Prop_D6LUT_SLICEL_I2_O)
+                                                      0.114     2.179 r  TW/y0r_r[3]_i_134/O
+                         net (fo=1, routed)           0.012     2.191    TW/y0r_r[3]_i_134_n_0
+    SLICE_X26Y223        MUXF7 (Prop_F7MUX_CD_SLICEL_I0_O)
+                                                      0.054     2.245 r  TW/y0r_r_reg[3]_i_69/O
+                         net (fo=12, routed)          0.417     2.661    TW/wi[0]
+    SLICE_X28Y216        LUT5 (Prop_H5LUT_SLICEM_I3_O)
+                                                      0.120     2.781 r  TW/y0i_r[3]_i_200/O
+                         net (fo=3, routed)           0.178     2.959    TW/y0i_r[3]_i_200_n_0
+    SLICE_X27Y215        LUT4 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.134     3.093 r  TW/y0i_r[3]_i_153/O
+                         net (fo=8, routed)           0.541     3.634    TW/BF/scm3[2]
+    SLICE_X25Y216        LUT4 (Prop_B5LUT_SLICEM_I0_O)
+                                                      0.126     3.760 r  TW/y0i_r[3]_i_136/O
+                         net (fo=1, routed)           0.231     3.991    TW/y0i_r[3]_i_136_n_0
+    SLICE_X24Y217        CARRY8 (Prop_CARRY8_SLICEM_DI[1]_CO[3])
+                                                      0.126     4.117 r  TW/y0i_r_reg[3]_i_74/CO[3]
+                         net (fo=1, routed)           0.220     4.337    TW/BF/ADD_Ti/sign_l20_in
+    SLICE_X25Y217        LUT6 (Prop_G6LUT_SLICEM_I0_O)
+                                                      0.031     4.368 r  TW/y0i_r[3]_i_36/O
+                         net (fo=22, routed)          0.216     4.584    TW/y0i_r[3]_i_36_n_0
+    SLICE_X25Y218        LUT3 (Prop_D5LUT_SLICEM_I1_O)
+                                                      0.085     4.669 r  TW/y0i_r[3]_i_170/O
+                         net (fo=9, routed)           0.149     4.818    TW/y0i_r[3]_i_170_n_0
+    SLICE_X25Y217        LUT6 (Prop_F6LUT_SLICEM_I2_O)
+                                                      0.134     4.952 r  TW/y0i_r[3]_i_95/O
+                         net (fo=6, routed)           0.437     5.390    TW/y0i_r[3]_i_95_n_0
+    SLICE_X27Y216        LUT4 (Prop_H5LUT_SLICEL_I2_O)
+                                                      0.086     5.476 r  TW/y0i_r[3]_i_181/O
+                         net (fo=3, routed)           0.306     5.782    TW/y0i_r[3]_i_181_n_0
+    SLICE_X28Y217        LUT5 (Prop_F6LUT_SLICEM_I0_O)
+                                                      0.134     5.916 f  TW/y0i_r[3]_i_112/O
+                         net (fo=4, routed)           0.324     6.240    TW/y0i_r[3]_i_112_n_0
+    SLICE_X26Y218        LUT5 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.134     6.374 f  TW/y0i_r[3]_i_194/O
+                         net (fo=4, routed)           0.113     6.487    TW/y0i_r[3]_i_194_n_0
+    SLICE_X26Y218        LUT5 (Prop_H5LUT_SLICEL_I4_O)
+                                                      0.142     6.629 r  TW/y0i_r[3]_i_160/O
+                         net (fo=1, routed)           0.212     6.841    TW/y0i_r[3]_i_160_n_0
+    SLICE_X26Y218        LUT6 (Prop_F6LUT_SLICEL_I4_O)
+                                                      0.133     6.974 r  TW/y0i_r[3]_i_90/O
+                         net (fo=13, routed)          0.507     7.481    TW/BF/sc_ti[4]
+    SLICE_X27Y233        LUT5 (Prop_D6LUT_SLICEL_I4_O)
+                                                      0.089     7.570 f  TW/y0i_r[3]_i_42/O
+                         net (fo=4, routed)           0.330     7.900    TW/y0i_r[3]_i_42_n_0
+    SLICE_X27Y229        LUT2 (Prop_C6LUT_SLICEL_I1_O)
+                                                      0.113     8.013 r  TW/y0i_r[3]_i_86/O
+                         net (fo=1, routed)           0.013     8.026    TW/y0i_r[3]_i_86_n_0
+    SLICE_X27Y229        CARRY8 (Prop_CARRY8_SLICEL_S[2]_CO[3])
+                                                      0.128     8.154 r  TW/y0i_r_reg[3]_i_39/CO[3]
+                         net (fo=10, routed)          0.232     8.386    TW/BF/ADD_y0i/sign_l20_in
+    SLICE_X27Y229        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.135     8.521 r  TW/y0i_r[3]_i_17/O
+                         net (fo=27, routed)          0.286     8.807    TW/y0i_r[3]_i_17_n_0
+    SLICE_X28Y232        LUT4 (Prop_B5LUT_SLICEM_I2_O)
+                                                      0.126     8.933 r  TW/y0i_r[3]_i_32/O
+                         net (fo=5, routed)           0.343     9.276    TW/y0i_r[3]_i_32_n_0
+    SLICE_X27Y233        LUT4 (Prop_H5LUT_SLICEL_I2_O)
+                                                      0.060     9.336 f  TW/y0i_r[3]_i_25/O
+                         net (fo=2, routed)           0.113     9.449    TW/y0i_r[3]_i_25_n_0
+    SLICE_X28Y233        LUT4 (Prop_B5LUT_SLICEM_I0_O)
+                                                      0.067     9.516 f  TW/y0i_r[3]_i_11/O
+                         net (fo=6, routed)           0.270     9.786    TW/y0i_r[3]_i_11_n_0
+    SLICE_X29Y232        LUT4 (Prop_G6LUT_SLICEM_I2_O)
+                                                      0.089     9.875 f  TW/y0i_r[2]_i_51/O
+                         net (fo=2, routed)           0.112     9.987    TW/y0i_r[2]_i_51_n_0
+    SLICE_X28Y232        LUT5 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.114    10.101 f  TW/y0i_r[2]_i_41/O
+                         net (fo=4, routed)           0.248    10.349    TW/y0i_r[2]_i_41_n_0
+    SLICE_X27Y234        LUT5 (Prop_D5LUT_SLICEL_I0_O)
+                                                      0.086    10.435 r  TW/y0i_r[2]_i_39/O
+                         net (fo=5, routed)           0.335    10.770    TW/y0i_r[2]_i_39_n_0
+    SLICE_X25Y236        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.135    10.905 r  TW/y0i_r[1]_i_25/O
+                         net (fo=1, routed)           0.276    11.181    TW/y0i_r[1]_i_25_n_0
+    SLICE_X26Y235        LUT6 (Prop_C6LUT_SLICEL_I5_O)
+                                                      0.133    11.314 f  TW/y0i_r[1]_i_7/O
+                         net (fo=2, routed)           0.336    11.650    TW/BF/sc_y0i[4]
+    SLICE_X28Y233        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.138    11.788 r  TW/y0i_r[1]_i_3/O
+                         net (fo=5, routed)           0.429    12.217    TW/y0i_r[1]_i_3_n_0
+    SLICE_X26Y233        LUT6 (Prop_H6LUT_SLICEL_I3_O)
+                                                      0.135    12.352 f  TW/y0i_r[1]_i_2/O
+                         net (fo=2, routed)           0.293    12.645    TW/y0i_r[1]_i_2_n_0
+    SLICE_X24Y230        LUT5 (Prop_C5LUT_SLICEM_I4_O)
+                                                      0.087    12.732 r  TW/y0i_r[0]_i_1/O
+                         net (fo=1, routed)           0.029    12.761    y0i[0]
+    SLICE_X24Y230        FDCE                                         r  y0i_r_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)  100.000   100.000 r  
+    E5                                                0.000   100.000 r  clk (IN)
+                         net (fo=0)                   0.000   100.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.255   100.255 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000   100.255    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000   100.255 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.279   100.534    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024   100.558 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.564   101.122    clk_IBUF_BUFG
+    SLICE_X24Y230        FDCE                                         r  y0i_r_reg[0]/C
+                         clock pessimism              0.258   101.380    
+                         clock uncertainty           -0.035   101.344    
+    SLICE_X24Y230        FDCE (Setup_CFF2_SLICEM_C_D)
+                                                      0.024   101.368    y0i_r_reg[0]
+  -------------------------------------------------------------------
+                         required time                        101.368    
+                         arrival time                         -12.761    
+  -------------------------------------------------------------------
+                         slack                                 88.607    
+
+Slack (MET) :             88.676ns  (required time - arrival time)
+  Source:                 tw_addr_r_reg[4]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Destination:            y0i_r_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            100.000ns  (sys_clk rise@100.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        11.249ns  (logic 3.343ns (29.719%)  route 7.906ns (70.281%))
+  Logic Levels:           30  (CARRY8=2 LUT2=1 LUT3=1 LUT4=8 LUT5=7 LUT6=10 MUXF7=1)
+  Clock Path Skew:        -0.063ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.123ns = ( 101.123 - 100.000 ) 
+    Source Clock Delay      (SCD):    1.444ns
+    Clock Pessimism Removal (CPR):    0.258ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.644ns (routing 0.001ns, distribution 0.643ns)
+  Clock Net Delay (Destination): 0.565ns (routing 0.001ns, distribution 0.564ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    E5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.458     0.458 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.458    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.458 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.314     0.772    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.800 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.644     1.444    clk_IBUF_BUFG
+    SLICE_X25Y225        FDCE                                         r  tw_addr_r_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X25Y225        FDCE (Prop_EFF2_SLICEM_C_Q)
+                                                      0.069     1.513 r  tw_addr_r_reg[4]/Q
+                         net (fo=7, routed)           0.156     1.669    TW/y0r_r[3]_i_135_0[4]
+    SLICE_X25Y223        LUT4 (Prop_C5LUT_SLICEM_I3_O)
+                                                      0.142     1.811 r  TW/y0r_r[3]_i_205/O
+                         net (fo=1, routed)           0.254     2.065    TW/y0r_r[3]_i_205_n_0
+    SLICE_X26Y223        LUT6 (Prop_D6LUT_SLICEL_I2_O)
+                                                      0.114     2.179 r  TW/y0r_r[3]_i_134/O
+                         net (fo=1, routed)           0.012     2.191    TW/y0r_r[3]_i_134_n_0
+    SLICE_X26Y223        MUXF7 (Prop_F7MUX_CD_SLICEL_I0_O)
+                                                      0.054     2.245 r  TW/y0r_r_reg[3]_i_69/O
+                         net (fo=12, routed)          0.417     2.661    TW/wi[0]
+    SLICE_X28Y216        LUT5 (Prop_H5LUT_SLICEM_I3_O)
+                                                      0.120     2.781 r  TW/y0i_r[3]_i_200/O
+                         net (fo=3, routed)           0.178     2.959    TW/y0i_r[3]_i_200_n_0
+    SLICE_X27Y215        LUT4 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.134     3.093 r  TW/y0i_r[3]_i_153/O
+                         net (fo=8, routed)           0.541     3.634    TW/BF/scm3[2]
+    SLICE_X25Y216        LUT4 (Prop_B5LUT_SLICEM_I0_O)
+                                                      0.126     3.760 r  TW/y0i_r[3]_i_136/O
+                         net (fo=1, routed)           0.231     3.991    TW/y0i_r[3]_i_136_n_0
+    SLICE_X24Y217        CARRY8 (Prop_CARRY8_SLICEM_DI[1]_CO[3])
+                                                      0.126     4.117 r  TW/y0i_r_reg[3]_i_74/CO[3]
+                         net (fo=1, routed)           0.220     4.337    TW/BF/ADD_Ti/sign_l20_in
+    SLICE_X25Y217        LUT6 (Prop_G6LUT_SLICEM_I0_O)
+                                                      0.031     4.368 r  TW/y0i_r[3]_i_36/O
+                         net (fo=22, routed)          0.216     4.584    TW/y0i_r[3]_i_36_n_0
+    SLICE_X25Y218        LUT3 (Prop_D5LUT_SLICEM_I1_O)
+                                                      0.085     4.669 r  TW/y0i_r[3]_i_170/O
+                         net (fo=9, routed)           0.149     4.818    TW/y0i_r[3]_i_170_n_0
+    SLICE_X25Y217        LUT6 (Prop_F6LUT_SLICEM_I2_O)
+                                                      0.134     4.952 r  TW/y0i_r[3]_i_95/O
+                         net (fo=6, routed)           0.437     5.390    TW/y0i_r[3]_i_95_n_0
+    SLICE_X27Y216        LUT4 (Prop_H5LUT_SLICEL_I2_O)
+                                                      0.086     5.476 r  TW/y0i_r[3]_i_181/O
+                         net (fo=3, routed)           0.306     5.782    TW/y0i_r[3]_i_181_n_0
+    SLICE_X28Y217        LUT5 (Prop_F6LUT_SLICEM_I0_O)
+                                                      0.134     5.916 f  TW/y0i_r[3]_i_112/O
+                         net (fo=4, routed)           0.324     6.240    TW/y0i_r[3]_i_112_n_0
+    SLICE_X26Y218        LUT5 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.134     6.374 f  TW/y0i_r[3]_i_194/O
+                         net (fo=4, routed)           0.113     6.487    TW/y0i_r[3]_i_194_n_0
+    SLICE_X26Y218        LUT5 (Prop_H5LUT_SLICEL_I4_O)
+                                                      0.142     6.629 r  TW/y0i_r[3]_i_160/O
+                         net (fo=1, routed)           0.212     6.841    TW/y0i_r[3]_i_160_n_0
+    SLICE_X26Y218        LUT6 (Prop_F6LUT_SLICEL_I4_O)
+                                                      0.133     6.974 r  TW/y0i_r[3]_i_90/O
+                         net (fo=13, routed)          0.507     7.481    TW/BF/sc_ti[4]
+    SLICE_X27Y233        LUT5 (Prop_D6LUT_SLICEL_I4_O)
+                                                      0.089     7.570 f  TW/y0i_r[3]_i_42/O
+                         net (fo=4, routed)           0.330     7.900    TW/y0i_r[3]_i_42_n_0
+    SLICE_X27Y229        LUT2 (Prop_C6LUT_SLICEL_I1_O)
+                                                      0.113     8.013 r  TW/y0i_r[3]_i_86/O
+                         net (fo=1, routed)           0.013     8.026    TW/y0i_r[3]_i_86_n_0
+    SLICE_X27Y229        CARRY8 (Prop_CARRY8_SLICEL_S[2]_CO[3])
+                                                      0.128     8.154 r  TW/y0i_r_reg[3]_i_39/CO[3]
+                         net (fo=10, routed)          0.232     8.386    TW/BF/ADD_y0i/sign_l20_in
+    SLICE_X27Y229        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.135     8.521 r  TW/y0i_r[3]_i_17/O
+                         net (fo=27, routed)          0.286     8.807    TW/y0i_r[3]_i_17_n_0
+    SLICE_X28Y232        LUT4 (Prop_B5LUT_SLICEM_I2_O)
+                                                      0.126     8.933 r  TW/y0i_r[3]_i_32/O
+                         net (fo=5, routed)           0.343     9.276    TW/y0i_r[3]_i_32_n_0
+    SLICE_X27Y233        LUT4 (Prop_H5LUT_SLICEL_I2_O)
+                                                      0.060     9.336 r  TW/y0i_r[3]_i_25/O
+                         net (fo=2, routed)           0.113     9.449    TW/y0i_r[3]_i_25_n_0
+    SLICE_X28Y233        LUT4 (Prop_B5LUT_SLICEM_I0_O)
+                                                      0.067     9.516 r  TW/y0i_r[3]_i_11/O
+                         net (fo=6, routed)           0.270     9.786    TW/y0i_r[3]_i_11_n_0
+    SLICE_X29Y232        LUT4 (Prop_G6LUT_SLICEM_I2_O)
+                                                      0.089     9.875 r  TW/y0i_r[2]_i_51/O
+                         net (fo=2, routed)           0.112     9.987    TW/y0i_r[2]_i_51_n_0
+    SLICE_X28Y232        LUT5 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.114    10.101 r  TW/y0i_r[2]_i_41/O
+                         net (fo=4, routed)           0.248    10.349    TW/y0i_r[2]_i_41_n_0
+    SLICE_X27Y234        LUT5 (Prop_D5LUT_SLICEL_I0_O)
+                                                      0.086    10.435 f  TW/y0i_r[2]_i_39/O
+                         net (fo=5, routed)           0.335    10.770    TW/y0i_r[2]_i_39_n_0
+    SLICE_X25Y236        LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.135    10.905 f  TW/y0i_r[1]_i_25/O
+                         net (fo=1, routed)           0.276    11.181    TW/y0i_r[1]_i_25_n_0
+    SLICE_X26Y235        LUT6 (Prop_C6LUT_SLICEL_I5_O)
+                                                      0.133    11.314 r  TW/y0i_r[1]_i_7/O
+                         net (fo=2, routed)           0.336    11.650    TW/BF/sc_y0i[4]
+    SLICE_X28Y233        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.138    11.788 f  TW/y0i_r[1]_i_3/O
+                         net (fo=5, routed)           0.429    12.217    TW/y0i_r[1]_i_3_n_0
+    SLICE_X26Y233        LUT6 (Prop_H6LUT_SLICEL_I3_O)
+                                                      0.135    12.352 r  TW/y0i_r[1]_i_2/O
+                         net (fo=2, routed)           0.250    12.602    TW/y0i_r[1]_i_2_n_0
+    SLICE_X24Y233        LUT6 (Prop_B6LUT_SLICEM_I2_O)
+                                                      0.031    12.633 r  TW/y0i_r[1]_i_1/O
+                         net (fo=1, routed)           0.059    12.692    y0i[1]
+    SLICE_X24Y233        FDCE                                         r  y0i_r_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)  100.000   100.000 r  
+    E5                                                0.000   100.000 r  clk (IN)
+                         net (fo=0)                   0.000   100.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.255   100.255 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000   100.255    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000   100.255 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.279   100.534    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024   100.558 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.565   101.123    clk_IBUF_BUFG
+    SLICE_X24Y233        FDCE                                         r  y0i_r_reg[1]/C
+                         clock pessimism              0.258   101.381    
+                         clock uncertainty           -0.035   101.345    
+    SLICE_X24Y233        FDCE (Setup_BFF_SLICEM_C_D)
+                                                      0.023   101.368    y0i_r_reg[1]
+  -------------------------------------------------------------------
+                         required time                        101.368    
+                         arrival time                         -12.692    
+  -------------------------------------------------------------------
+                         slack                                 88.676    
+
+Slack (MET) :             89.091ns  (required time - arrival time)
+  Source:                 tw_addr_r_reg_rep[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Destination:            y0r_r_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            100.000ns  (sys_clk rise@100.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        10.825ns  (logic 3.401ns (31.418%)  route 7.424ns (68.582%))
+  Logic Levels:           31  (CARRY8=2 LUT2=4 LUT3=5 LUT4=2 LUT5=7 LUT6=10 MUXF7=1)
+  Clock Path Skew:        -0.072ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.114ns = ( 101.114 - 100.000 ) 
+    Source Clock Delay      (SCD):    1.444ns
+    Clock Pessimism Removal (CPR):    0.258ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.644ns (routing 0.001ns, distribution 0.643ns)
+  Clock Net Delay (Destination): 0.556ns (routing 0.001ns, distribution 0.555ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    E5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.458     0.458 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.458    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.458 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.314     0.772    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.800 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.644     1.444    clk_IBUF_BUFG
+    SLICE_X24Y222        FDCE                                         r  tw_addr_r_reg_rep[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X24Y222        FDCE (Prop_FFF2_SLICEM_C_Q)
+                                                      0.069     1.513 r  tw_addr_r_reg_rep[0]/Q
+                         net (fo=7, routed)           0.229     1.742    TW/y0r_r_reg[3]_i_24_0[0]
+    SLICE_X25Y222        LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.115     1.857 r  TW/y0r_r[3]_i_111/O
+                         net (fo=1, routed)           0.289     2.146    TW/y0r_r[3]_i_111_n_0
+    SLICE_X25Y222        LUT5 (Prop_D6LUT_SLICEM_I0_O)
+                                                      0.088     2.234 r  TW/y0r_r[3]_i_56/O
+                         net (fo=1, routed)           0.029     2.263    TW/y0r_r[3]_i_56_n_0
+    SLICE_X25Y222        MUXF7 (Prop_F7MUX_CD_SLICEM_I0_O)
+                                                      0.061     2.324 r  TW/y0r_r_reg[3]_i_24/O
+                         net (fo=13, routed)          0.436     2.760    TW/wr[0]
+    SLICE_X27Y215        LUT4 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.120     2.880 f  TW/y0r_r[3]_i_202/O
+                         net (fo=7, routed)           0.227     3.107    TW/BF/k_wr[0]
+    SLICE_X28Y215        LUT5 (Prop_E6LUT_SLICEM_I2_O)
+                                                      0.135     3.242 r  TW/y0r_r[3]_i_165/O
+                         net (fo=5, routed)           0.191     3.433    TW/y0r_r[3]_i_165_n_0
+    SLICE_X28Y212        LUT3 (Prop_D5LUT_SLICEM_I0_O)
+                                                      0.119     3.552 r  TW/y0r_r[3]_i_195/O
+                         net (fo=4, routed)           0.237     3.789    TW/BF/scm1[3]
+    SLICE_X28Y212        LUT4 (Prop_B5LUT_SLICEM_I3_O)
+                                                      0.148     3.937 r  TW/y0r_r[3]_i_170/O
+                         net (fo=1, routed)           0.348     4.285    TW/y0r_r[3]_i_170_n_0
+    SLICE_X28Y213        CARRY8 (Prop_CARRY8_SLICEM_DI[1]_CO[3])
+                                                      0.126     4.411 r  TW/y0r_r_reg[3]_i_97/CO[3]
+                         net (fo=1, routed)           0.181     4.592    TW/BF/SUB_Tr/sign_l20_in
+    SLICE_X28Y213        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.138     4.730 r  TW/y0r_r[3]_i_48/O
+                         net (fo=20, routed)          0.277     5.007    TW/y0r_r[3]_i_48_n_0
+    SLICE_X27Y211        LUT3 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.141     5.148 f  TW/y0r_r[3]_i_212/O
+                         net (fo=7, routed)           0.525     5.674    TW/y0r_r[3]_i_212_n_0
+    SLICE_X25Y211        LUT2 (Prop_B5LUT_SLICEM_I1_O)
+                                                      0.148     5.822 f  TW/y0r_r[3]_i_230/O
+                         net (fo=4, routed)           0.215     6.036    TW/y0r_r[3]_i_230_n_0
+    SLICE_X25Y210        LUT3 (Prop_D5LUT_SLICEM_I1_O)
+                                                      0.085     6.121 f  TW/y0r_r[3]_i_209/O
+                         net (fo=1, routed)           0.236     6.357    TW/y0r_r[3]_i_209_n_0
+    SLICE_X27Y210        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.135     6.492 f  TW/y0r_r[3]_i_141/O
+                         net (fo=4, routed)           0.197     6.690    TW/y0r_r[3]_i_141_n_0
+    SLICE_X26Y210        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.090     6.780 r  TW/y0r_r[3]_i_146/O
+                         net (fo=11, routed)          0.147     6.926    TW/y0r_r[3]_i_146_n_0
+    SLICE_X25Y211        LUT3 (Prop_D6LUT_SLICEM_I1_O)
+                                                      0.113     7.039 r  TW/y0r_r[3]_i_184/O
+                         net (fo=1, routed)           0.104     7.143    TW/y0r_r[3]_i_184_n_0
+    SLICE_X24Y211        LUT6 (Prop_H6LUT_SLICEM_I2_O)
+                                                      0.090     7.233 r  TW/y0r_r[3]_i_107/O
+                         net (fo=14, routed)          0.670     7.904    TW/BF/sc_tr[2]
+    SLICE_X23Y201        LUT5 (Prop_B5LUT_SLICEL_I4_O)
+                                                      0.126     8.030 f  TW/y0r_r[3]_i_81/O
+                         net (fo=3, routed)           0.179     8.208    TW/y0r_r[3]_i_81_n_0
+    SLICE_X24Y200        LUT2 (Prop_B6LUT_SLICEM_I0_O)
+                                                      0.136     8.344 r  TW/y0r_r[3]_i_104/O
+                         net (fo=1, routed)           0.020     8.364    TW/y0r_r[3]_i_104_n_0
+    SLICE_X24Y200        CARRY8 (Prop_CARRY8_SLICEM_S[1]_CO[3])
+                                                      0.165     8.529 r  TW/y0r_r_reg[3]_i_50/CO[3]
+                         net (fo=10, routed)          0.306     8.836    TW/BF/ADD_y0r/sign_l20_in
+    SLICE_X23Y202        LUT6 (Prop_G6LUT_SLICEL_I4_O)
+                                                      0.134     8.970 r  TW/y0r_r[2]_i_89/O
+                         net (fo=3, routed)           0.150     9.120    TW/y0r_r[2]_i_89_n_0
+    SLICE_X23Y201        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.090     9.210 f  TW/y0r_r[2]_i_86/O
+                         net (fo=1, routed)           0.149     9.359    TW/y0r_r[2]_i_86_n_0
+    SLICE_X24Y201        LUT6 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.090     9.449 r  TW/y0r_r[2]_i_84/O
+                         net (fo=3, routed)           0.234     9.683    TW/y0r_r[2]_i_84_n_0
+    SLICE_X23Y204        LUT5 (Prop_B6LUT_SLICEL_I4_O)
+                                                      0.082     9.765 r  TW/y0r_r[2]_i_75/O
+                         net (fo=3, routed)           0.086     9.851    TW/y0r_r[2]_i_75_n_0
+    SLICE_X24Y204        LUT3 (Prop_D5LUT_SLICEM_I2_O)
+                                                      0.061     9.912 r  TW/y0r_r[2]_i_61/O
+                         net (fo=4, routed)           0.229    10.141    TW/y0r_r[2]_i_61_n_0
+    SLICE_X23Y205        LUT6 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.082    10.223 f  TW/y0r_r[2]_i_55/O
+                         net (fo=5, routed)           0.097    10.320    TW/y0r_r[2]_i_55_n_0
+    SLICE_X23Y207        LUT5 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.031    10.351 f  TW/y0r_r[2]_i_32/O
+                         net (fo=14, routed)          0.097    10.448    TW/y0r_r[2]_i_32_n_0
+    SLICE_X23Y206        LUT2 (Prop_E6LUT_SLICEL_I1_O)
+                                                      0.031    10.479 r  TW/y0r_r[2]_i_43/O
+                         net (fo=1, routed)           0.595    11.074    TW/y0r_r[2]_i_43_n_0
+    SLICE_X23Y206        LUT6 (Prop_H6LUT_SLICEL_I4_O)
+                                                      0.114    11.188 f  TW/y0r_r[2]_i_14/O
+                         net (fo=2, routed)           0.247    11.435    TW/BF/sc_y0r[2]
+    SLICE_X23Y206        LUT5 (Prop_A6LUT_SLICEL_I1_O)
+                                                      0.114    11.549 f  TW/y0r_r[2]_i_7/O
+                         net (fo=7, routed)           0.206    11.755    TW/y0r_r[2]_i_7_n_0
+    SLICE_X24Y208        LUT2 (Prop_B5LUT_SLICEM_I1_O)
+                                                      0.091    11.846 r  TW/y0r_r[2]_i_6/O
+                         net (fo=2, routed)           0.219    12.065    TW/y0r_r[2]_i_6_n_0
+    SLICE_X24Y208        LUT5 (Prop_D6LUT_SLICEM_I4_O)
+                                                      0.133    12.198 r  TW/y0r_r[1]_i_1/O
+                         net (fo=1, routed)           0.071    12.269    y0r[1]
+    SLICE_X24Y208        FDCE                                         r  y0r_r_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)  100.000   100.000 r  
+    E5                                                0.000   100.000 r  clk (IN)
+                         net (fo=0)                   0.000   100.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.255   100.255 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000   100.255    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000   100.255 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.279   100.534    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024   100.558 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.556   101.114    clk_IBUF_BUFG
+    SLICE_X24Y208        FDCE                                         r  y0r_r_reg[1]/C
+                         clock pessimism              0.258   101.372    
+                         clock uncertainty           -0.035   101.336    
+    SLICE_X24Y208        FDCE (Setup_DFF_SLICEM_C_D)
+                                                      0.023   101.359    y0r_r_reg[1]
+  -------------------------------------------------------------------
+                         required time                        101.359    
+                         arrival time                         -12.269    
+  -------------------------------------------------------------------
+                         slack                                 89.091    
+
+Slack (MET) :             89.164ns  (required time - arrival time)
+  Source:                 tw_addr_r_reg_rep[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Destination:            y0r_r_reg[2]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            100.000ns  (sys_clk rise@100.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        10.752ns  (logic 3.445ns (32.040%)  route 7.307ns (67.960%))
+  Logic Levels:           31  (CARRY8=2 LUT2=3 LUT3=5 LUT4=2 LUT5=6 LUT6=12 MUXF7=1)
+  Clock Path Skew:        -0.072ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.114ns = ( 101.114 - 100.000 ) 
+    Source Clock Delay      (SCD):    1.444ns
+    Clock Pessimism Removal (CPR):    0.258ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.644ns (routing 0.001ns, distribution 0.643ns)
+  Clock Net Delay (Destination): 0.556ns (routing 0.001ns, distribution 0.555ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    E5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.458     0.458 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.458    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.458 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.314     0.772    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.800 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.644     1.444    clk_IBUF_BUFG
+    SLICE_X24Y222        FDCE                                         r  tw_addr_r_reg_rep[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X24Y222        FDCE (Prop_FFF2_SLICEM_C_Q)
+                                                      0.069     1.513 r  tw_addr_r_reg_rep[0]/Q
+                         net (fo=7, routed)           0.229     1.742    TW/y0r_r_reg[3]_i_24_0[0]
+    SLICE_X25Y222        LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.115     1.857 r  TW/y0r_r[3]_i_111/O
+                         net (fo=1, routed)           0.289     2.146    TW/y0r_r[3]_i_111_n_0
+    SLICE_X25Y222        LUT5 (Prop_D6LUT_SLICEM_I0_O)
+                                                      0.088     2.234 r  TW/y0r_r[3]_i_56/O
+                         net (fo=1, routed)           0.029     2.263    TW/y0r_r[3]_i_56_n_0
+    SLICE_X25Y222        MUXF7 (Prop_F7MUX_CD_SLICEM_I0_O)
+                                                      0.061     2.324 r  TW/y0r_r_reg[3]_i_24/O
+                         net (fo=13, routed)          0.436     2.760    TW/wr[0]
+    SLICE_X27Y215        LUT4 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.120     2.880 f  TW/y0r_r[3]_i_202/O
+                         net (fo=7, routed)           0.227     3.107    TW/BF/k_wr[0]
+    SLICE_X28Y215        LUT5 (Prop_E6LUT_SLICEM_I2_O)
+                                                      0.135     3.242 r  TW/y0r_r[3]_i_165/O
+                         net (fo=5, routed)           0.191     3.433    TW/y0r_r[3]_i_165_n_0
+    SLICE_X28Y212        LUT3 (Prop_D5LUT_SLICEM_I0_O)
+                                                      0.119     3.552 r  TW/y0r_r[3]_i_195/O
+                         net (fo=4, routed)           0.237     3.789    TW/BF/scm1[3]
+    SLICE_X28Y212        LUT4 (Prop_B5LUT_SLICEM_I3_O)
+                                                      0.148     3.937 r  TW/y0r_r[3]_i_170/O
+                         net (fo=1, routed)           0.348     4.285    TW/y0r_r[3]_i_170_n_0
+    SLICE_X28Y213        CARRY8 (Prop_CARRY8_SLICEM_DI[1]_CO[3])
+                                                      0.126     4.411 r  TW/y0r_r_reg[3]_i_97/CO[3]
+                         net (fo=1, routed)           0.181     4.592    TW/BF/SUB_Tr/sign_l20_in
+    SLICE_X28Y213        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.138     4.730 r  TW/y0r_r[3]_i_48/O
+                         net (fo=20, routed)          0.277     5.007    TW/y0r_r[3]_i_48_n_0
+    SLICE_X27Y211        LUT3 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.141     5.148 f  TW/y0r_r[3]_i_212/O
+                         net (fo=7, routed)           0.525     5.674    TW/y0r_r[3]_i_212_n_0
+    SLICE_X25Y211        LUT2 (Prop_B5LUT_SLICEM_I1_O)
+                                                      0.148     5.822 f  TW/y0r_r[3]_i_230/O
+                         net (fo=4, routed)           0.215     6.036    TW/y0r_r[3]_i_230_n_0
+    SLICE_X25Y210        LUT3 (Prop_D5LUT_SLICEM_I1_O)
+                                                      0.085     6.121 f  TW/y0r_r[3]_i_209/O
+                         net (fo=1, routed)           0.236     6.357    TW/y0r_r[3]_i_209_n_0
+    SLICE_X27Y210        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.135     6.492 f  TW/y0r_r[3]_i_141/O
+                         net (fo=4, routed)           0.197     6.690    TW/y0r_r[3]_i_141_n_0
+    SLICE_X26Y210        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.090     6.780 r  TW/y0r_r[3]_i_146/O
+                         net (fo=11, routed)          0.147     6.926    TW/y0r_r[3]_i_146_n_0
+    SLICE_X25Y211        LUT3 (Prop_D6LUT_SLICEM_I1_O)
+                                                      0.113     7.039 r  TW/y0r_r[3]_i_184/O
+                         net (fo=1, routed)           0.104     7.143    TW/y0r_r[3]_i_184_n_0
+    SLICE_X24Y211        LUT6 (Prop_H6LUT_SLICEM_I2_O)
+                                                      0.090     7.233 r  TW/y0r_r[3]_i_107/O
+                         net (fo=14, routed)          0.670     7.904    TW/BF/sc_tr[2]
+    SLICE_X23Y201        LUT5 (Prop_B5LUT_SLICEL_I4_O)
+                                                      0.126     8.030 f  TW/y0r_r[3]_i_81/O
+                         net (fo=3, routed)           0.179     8.208    TW/y0r_r[3]_i_81_n_0
+    SLICE_X24Y200        LUT2 (Prop_B6LUT_SLICEM_I0_O)
+                                                      0.136     8.344 r  TW/y0r_r[3]_i_104/O
+                         net (fo=1, routed)           0.020     8.364    TW/y0r_r[3]_i_104_n_0
+    SLICE_X24Y200        CARRY8 (Prop_CARRY8_SLICEM_S[1]_CO[3])
+                                                      0.165     8.529 r  TW/y0r_r_reg[3]_i_50/CO[3]
+                         net (fo=10, routed)          0.306     8.836    TW/BF/ADD_y0r/sign_l20_in
+    SLICE_X23Y202        LUT6 (Prop_G6LUT_SLICEL_I4_O)
+                                                      0.134     8.970 r  TW/y0r_r[2]_i_89/O
+                         net (fo=3, routed)           0.150     9.120    TW/y0r_r[2]_i_89_n_0
+    SLICE_X23Y201        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.090     9.210 f  TW/y0r_r[2]_i_86/O
+                         net (fo=1, routed)           0.149     9.359    TW/y0r_r[2]_i_86_n_0
+    SLICE_X24Y201        LUT6 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.090     9.449 r  TW/y0r_r[2]_i_84/O
+                         net (fo=3, routed)           0.234     9.683    TW/y0r_r[2]_i_84_n_0
+    SLICE_X23Y204        LUT5 (Prop_B6LUT_SLICEL_I4_O)
+                                                      0.082     9.765 r  TW/y0r_r[2]_i_75/O
+                         net (fo=3, routed)           0.086     9.851    TW/y0r_r[2]_i_75_n_0
+    SLICE_X24Y204        LUT3 (Prop_D5LUT_SLICEM_I2_O)
+                                                      0.061     9.912 r  TW/y0r_r[2]_i_61/O
+                         net (fo=4, routed)           0.229    10.141    TW/y0r_r[2]_i_61_n_0
+    SLICE_X23Y205        LUT6 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.082    10.223 f  TW/y0r_r[2]_i_55/O
+                         net (fo=5, routed)           0.097    10.320    TW/y0r_r[2]_i_55_n_0
+    SLICE_X23Y207        LUT5 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.031    10.351 f  TW/y0r_r[2]_i_32/O
+                         net (fo=14, routed)          0.097    10.448    TW/y0r_r[2]_i_32_n_0
+    SLICE_X23Y206        LUT2 (Prop_E6LUT_SLICEL_I1_O)
+                                                      0.031    10.479 r  TW/y0r_r[2]_i_43/O
+                         net (fo=1, routed)           0.595    11.074    TW/y0r_r[2]_i_43_n_0
+    SLICE_X23Y206        LUT6 (Prop_H6LUT_SLICEL_I4_O)
+                                                      0.114    11.188 r  TW/y0r_r[2]_i_14/O
+                         net (fo=2, routed)           0.247    11.435    TW/BF/sc_y0r[2]
+    SLICE_X23Y206        LUT5 (Prop_A6LUT_SLICEL_I1_O)
+                                                      0.114    11.549 r  TW/y0r_r[2]_i_7/O
+                         net (fo=7, routed)           0.213    11.762    TW/y0r_r[2]_i_7_n_0
+    SLICE_X24Y208        LUT6 (Prop_G6LUT_SLICEM_I5_O)
+                                                      0.135    11.897 r  TW/y0r_r[2]_i_4/O
+                         net (fo=1, routed)           0.101    11.998    TW/y0r_r[2]_i_4_n_0
+    SLICE_X24Y208        LUT6 (Prop_C6LUT_SLICEM_I2_O)
+                                                      0.133    12.131 r  TW/y0r_r[2]_i_1/O
+                         net (fo=1, routed)           0.065    12.196    y0r[2]
+    SLICE_X24Y208        FDCE                                         r  y0r_r_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)  100.000   100.000 r  
+    E5                                                0.000   100.000 r  clk (IN)
+                         net (fo=0)                   0.000   100.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.255   100.255 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000   100.255    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000   100.255 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.279   100.534    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024   100.558 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.556   101.114    clk_IBUF_BUFG
+    SLICE_X24Y208        FDCE                                         r  y0r_r_reg[2]/C
+                         clock pessimism              0.258   101.372    
+                         clock uncertainty           -0.035   101.336    
+    SLICE_X24Y208        FDCE (Setup_CFF_SLICEM_C_D)
+                                                      0.023   101.359    y0r_r_reg[2]
+  -------------------------------------------------------------------
+                         required time                        101.359    
+                         arrival time                         -12.196    
+  -------------------------------------------------------------------
+                         slack                                 89.164    
+
+Slack (MET) :             89.229ns  (required time - arrival time)
+  Source:                 tw_addr_r_reg_rep[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Destination:            y0r_r_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            100.000ns  (sys_clk rise@100.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        10.685ns  (logic 3.457ns (32.352%)  route 7.228ns (67.648%))
+  Logic Levels:           31  (CARRY8=2 LUT2=4 LUT3=5 LUT4=2 LUT5=6 LUT6=11 MUXF7=1)
+  Clock Path Skew:        -0.074ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.112ns = ( 101.112 - 100.000 ) 
+    Source Clock Delay      (SCD):    1.444ns
+    Clock Pessimism Removal (CPR):    0.258ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.644ns (routing 0.001ns, distribution 0.643ns)
+  Clock Net Delay (Destination): 0.554ns (routing 0.001ns, distribution 0.553ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    E5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.458     0.458 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.458    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.458 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.314     0.772    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.800 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.644     1.444    clk_IBUF_BUFG
+    SLICE_X24Y222        FDCE                                         r  tw_addr_r_reg_rep[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X24Y222        FDCE (Prop_FFF2_SLICEM_C_Q)
+                                                      0.069     1.513 r  tw_addr_r_reg_rep[0]/Q
+                         net (fo=7, routed)           0.229     1.742    TW/y0r_r_reg[3]_i_24_0[0]
+    SLICE_X25Y222        LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.115     1.857 r  TW/y0r_r[3]_i_111/O
+                         net (fo=1, routed)           0.289     2.146    TW/y0r_r[3]_i_111_n_0
+    SLICE_X25Y222        LUT5 (Prop_D6LUT_SLICEM_I0_O)
+                                                      0.088     2.234 r  TW/y0r_r[3]_i_56/O
+                         net (fo=1, routed)           0.029     2.263    TW/y0r_r[3]_i_56_n_0
+    SLICE_X25Y222        MUXF7 (Prop_F7MUX_CD_SLICEM_I0_O)
+                                                      0.061     2.324 r  TW/y0r_r_reg[3]_i_24/O
+                         net (fo=13, routed)          0.436     2.760    TW/wr[0]
+    SLICE_X27Y215        LUT4 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.120     2.880 f  TW/y0r_r[3]_i_202/O
+                         net (fo=7, routed)           0.227     3.107    TW/BF/k_wr[0]
+    SLICE_X28Y215        LUT5 (Prop_E6LUT_SLICEM_I2_O)
+                                                      0.135     3.242 r  TW/y0r_r[3]_i_165/O
+                         net (fo=5, routed)           0.191     3.433    TW/y0r_r[3]_i_165_n_0
+    SLICE_X28Y212        LUT3 (Prop_D5LUT_SLICEM_I0_O)
+                                                      0.119     3.552 r  TW/y0r_r[3]_i_195/O
+                         net (fo=4, routed)           0.237     3.789    TW/BF/scm1[3]
+    SLICE_X28Y212        LUT4 (Prop_B5LUT_SLICEM_I3_O)
+                                                      0.148     3.937 r  TW/y0r_r[3]_i_170/O
+                         net (fo=1, routed)           0.348     4.285    TW/y0r_r[3]_i_170_n_0
+    SLICE_X28Y213        CARRY8 (Prop_CARRY8_SLICEM_DI[1]_CO[3])
+                                                      0.126     4.411 r  TW/y0r_r_reg[3]_i_97/CO[3]
+                         net (fo=1, routed)           0.181     4.592    TW/BF/SUB_Tr/sign_l20_in
+    SLICE_X28Y213        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.138     4.730 r  TW/y0r_r[3]_i_48/O
+                         net (fo=20, routed)          0.277     5.007    TW/y0r_r[3]_i_48_n_0
+    SLICE_X27Y211        LUT3 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.141     5.148 f  TW/y0r_r[3]_i_212/O
+                         net (fo=7, routed)           0.525     5.674    TW/y0r_r[3]_i_212_n_0
+    SLICE_X25Y211        LUT2 (Prop_B5LUT_SLICEM_I1_O)
+                                                      0.148     5.822 f  TW/y0r_r[3]_i_230/O
+                         net (fo=4, routed)           0.215     6.036    TW/y0r_r[3]_i_230_n_0
+    SLICE_X25Y210        LUT3 (Prop_D5LUT_SLICEM_I1_O)
+                                                      0.085     6.121 f  TW/y0r_r[3]_i_209/O
+                         net (fo=1, routed)           0.236     6.357    TW/y0r_r[3]_i_209_n_0
+    SLICE_X27Y210        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.135     6.492 f  TW/y0r_r[3]_i_141/O
+                         net (fo=4, routed)           0.197     6.690    TW/y0r_r[3]_i_141_n_0
+    SLICE_X26Y210        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.090     6.780 r  TW/y0r_r[3]_i_146/O
+                         net (fo=11, routed)          0.147     6.926    TW/y0r_r[3]_i_146_n_0
+    SLICE_X25Y211        LUT3 (Prop_D6LUT_SLICEM_I1_O)
+                                                      0.113     7.039 r  TW/y0r_r[3]_i_184/O
+                         net (fo=1, routed)           0.104     7.143    TW/y0r_r[3]_i_184_n_0
+    SLICE_X24Y211        LUT6 (Prop_H6LUT_SLICEM_I2_O)
+                                                      0.090     7.233 r  TW/y0r_r[3]_i_107/O
+                         net (fo=14, routed)          0.670     7.904    TW/BF/sc_tr[2]
+    SLICE_X23Y201        LUT5 (Prop_B5LUT_SLICEL_I4_O)
+                                                      0.126     8.030 f  TW/y0r_r[3]_i_81/O
+                         net (fo=3, routed)           0.179     8.208    TW/y0r_r[3]_i_81_n_0
+    SLICE_X24Y200        LUT2 (Prop_B6LUT_SLICEM_I0_O)
+                                                      0.136     8.344 r  TW/y0r_r[3]_i_104/O
+                         net (fo=1, routed)           0.020     8.364    TW/y0r_r[3]_i_104_n_0
+    SLICE_X24Y200        CARRY8 (Prop_CARRY8_SLICEM_S[1]_CO[3])
+                                                      0.165     8.529 r  TW/y0r_r_reg[3]_i_50/CO[3]
+                         net (fo=10, routed)          0.306     8.836    TW/BF/ADD_y0r/sign_l20_in
+    SLICE_X23Y202        LUT6 (Prop_G6LUT_SLICEL_I4_O)
+                                                      0.134     8.970 r  TW/y0r_r[2]_i_89/O
+                         net (fo=3, routed)           0.150     9.120    TW/y0r_r[2]_i_89_n_0
+    SLICE_X23Y201        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.090     9.210 f  TW/y0r_r[2]_i_86/O
+                         net (fo=1, routed)           0.149     9.359    TW/y0r_r[2]_i_86_n_0
+    SLICE_X24Y201        LUT6 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.090     9.449 r  TW/y0r_r[2]_i_84/O
+                         net (fo=3, routed)           0.234     9.683    TW/y0r_r[2]_i_84_n_0
+    SLICE_X23Y204        LUT5 (Prop_B6LUT_SLICEL_I4_O)
+                                                      0.082     9.765 r  TW/y0r_r[2]_i_75/O
+                         net (fo=3, routed)           0.086     9.851    TW/y0r_r[2]_i_75_n_0
+    SLICE_X24Y204        LUT3 (Prop_D5LUT_SLICEM_I2_O)
+                                                      0.061     9.912 r  TW/y0r_r[2]_i_61/O
+                         net (fo=4, routed)           0.229    10.141    TW/y0r_r[2]_i_61_n_0
+    SLICE_X23Y205        LUT6 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.082    10.223 f  TW/y0r_r[2]_i_55/O
+                         net (fo=5, routed)           0.097    10.320    TW/y0r_r[2]_i_55_n_0
+    SLICE_X23Y207        LUT5 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.031    10.351 f  TW/y0r_r[2]_i_32/O
+                         net (fo=14, routed)          0.097    10.448    TW/y0r_r[2]_i_32_n_0
+    SLICE_X23Y206        LUT2 (Prop_E6LUT_SLICEL_I1_O)
+                                                      0.031    10.479 r  TW/y0r_r[2]_i_43/O
+                         net (fo=1, routed)           0.595    11.074    TW/y0r_r[2]_i_43_n_0
+    SLICE_X23Y206        LUT6 (Prop_H6LUT_SLICEL_I4_O)
+                                                      0.114    11.188 r  TW/y0r_r[2]_i_14/O
+                         net (fo=2, routed)           0.247    11.435    TW/BF/sc_y0r[2]
+    SLICE_X23Y206        LUT5 (Prop_A6LUT_SLICEL_I1_O)
+                                                      0.114    11.549 r  TW/y0r_r[2]_i_7/O
+                         net (fo=7, routed)           0.119    11.668    TW/y0r_r[2]_i_7_n_0
+    SLICE_X23Y208        LUT6 (Prop_G6LUT_SLICEL_I0_O)
+                                                      0.134    11.802 r  TW/y0r_r[1]_i_3/O
+                         net (fo=2, routed)           0.157    11.959    TW/y0r_r[1]_i_3_n_0
+    SLICE_X24Y209        LUT2 (Prop_A5LUT_SLICEM_I0_O)
+                                                      0.146    12.105 r  TW/y0r_r[0]_i_1/O
+                         net (fo=1, routed)           0.024    12.129    y0r[0]
+    SLICE_X24Y209        FDCE                                         r  y0r_r_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)  100.000   100.000 r  
+    E5                                                0.000   100.000 r  clk (IN)
+                         net (fo=0)                   0.000   100.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.255   100.255 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000   100.255    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000   100.255 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.279   100.534    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024   100.558 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.554   101.112    clk_IBUF_BUFG
+    SLICE_X24Y209        FDCE                                         r  y0r_r_reg[0]/C
+                         clock pessimism              0.258   101.370    
+                         clock uncertainty           -0.035   101.334    
+    SLICE_X24Y209        FDCE (Setup_AFF2_SLICEM_C_D)
+                                                      0.024   101.358    y0r_r_reg[0]
+  -------------------------------------------------------------------
+                         required time                        101.358    
+                         arrival time                         -12.129    
+  -------------------------------------------------------------------
+                         slack                                 89.229    
+
+Slack (MET) :             89.697ns  (required time - arrival time)
+  Source:                 tw_addr_r_reg_rep[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Destination:            y1i_r_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@5.000ns period=100.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            100.000ns  (sys_clk rise@100.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        10.238ns  (logic 3.210ns (31.352%)  route 7.028ns (68.648%))
+  Logic Levels:           30  (CARRY8=2 LUT2=3 LUT3=1 LUT4=3 LUT5=9 LUT6=11 MUXF7=1)
+  Clock Path Skew:        -0.052ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.133ns = ( 101.133 - 100.000 ) 
+    Source Clock Delay      (SCD):    1.444ns
+    Clock Pessimism Removal (CPR):    0.258ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.644ns (routing 0.001ns, distribution 0.643ns)
+  Clock Net Delay (Destination): 0.576ns (routing 0.001ns, distribution 0.575ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    E5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.458     0.458 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.458    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.458 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.314     0.772    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.800 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.644     1.444    clk_IBUF_BUFG
+    SLICE_X24Y222        FDCE                                         r  tw_addr_r_reg_rep[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X24Y222        FDCE (Prop_FFF2_SLICEM_C_Q)
+                                                      0.069     1.513 r  tw_addr_r_reg_rep[0]/Q
+                         net (fo=7, routed)           0.229     1.742    TW/y0r_r_reg[3]_i_24_0[0]
+    SLICE_X25Y222        LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.115     1.857 r  TW/y0r_r[3]_i_111/O
+                         net (fo=1, routed)           0.289     2.146    TW/y0r_r[3]_i_111_n_0
+    SLICE_X25Y222        LUT5 (Prop_D6LUT_SLICEM_I0_O)
+                                                      0.088     2.234 r  TW/y0r_r[3]_i_56/O
+                         net (fo=1, routed)           0.029     2.263    TW/y0r_r[3]_i_56_n_0
+    SLICE_X25Y222        MUXF7 (Prop_F7MUX_CD_SLICEM_I0_O)
+                                                      0.061     2.324 r  TW/y0r_r_reg[3]_i_24/O
+                         net (fo=13, routed)          0.436     2.760    TW/wr[0]
+    SLICE_X27Y215        LUT4 (Prop_D5LUT_SLICEL_I2_O)
+                                                      0.120     2.880 r  TW/y0r_r[3]_i_202/O
+                         net (fo=7, routed)           0.248     3.128    TW/BF/k_wr[0]
+    SLICE_X27Y215        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.082     3.210 r  TW/y0i_r[3]_i_177/O
+                         net (fo=3, routed)           0.238     3.448    TW/y0i_r[3]_i_177_n_0
+    SLICE_X26Y216        LUT6 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.047     3.495 f  TW/y0i_r[3]_i_178/O
+                         net (fo=9, routed)           0.159     3.653    TW/BF/scm4[6]
+    SLICE_X25Y217        LUT2 (Prop_B5LUT_SLICEM_I1_O)
+                                                      0.091     3.744 r  TW/y0i_r[3]_i_135/O
+                         net (fo=1, routed)           0.220     3.964    TW/y0i_r[3]_i_135_n_0
+    SLICE_X24Y217        CARRY8 (Prop_CARRY8_SLICEM_DI[2]_CO[3])
+                                                      0.117     4.081 r  TW/y0i_r_reg[3]_i_74/CO[3]
+                         net (fo=1, routed)           0.220     4.301    TW/BF/ADD_Ti/sign_l20_in
+    SLICE_X25Y217        LUT6 (Prop_G6LUT_SLICEM_I0_O)
+                                                      0.031     4.332 r  TW/y0i_r[3]_i_36/O
+                         net (fo=22, routed)          0.216     4.549    TW/y0i_r[3]_i_36_n_0
+    SLICE_X25Y218        LUT3 (Prop_D5LUT_SLICEM_I1_O)
+                                                      0.085     4.634 r  TW/y0i_r[3]_i_170/O
+                         net (fo=9, routed)           0.149     4.783    TW/y0i_r[3]_i_170_n_0
+    SLICE_X25Y217        LUT6 (Prop_F6LUT_SLICEM_I2_O)
+                                                      0.134     4.917 r  TW/y0i_r[3]_i_95/O
+                         net (fo=6, routed)           0.437     5.354    TW/y0i_r[3]_i_95_n_0
+    SLICE_X27Y216        LUT4 (Prop_H5LUT_SLICEL_I2_O)
+                                                      0.086     5.440 r  TW/y0i_r[3]_i_181/O
+                         net (fo=3, routed)           0.306     5.746    TW/y0i_r[3]_i_181_n_0
+    SLICE_X28Y217        LUT5 (Prop_F6LUT_SLICEM_I0_O)
+                                                      0.134     5.880 f  TW/y0i_r[3]_i_112/O
+                         net (fo=4, routed)           0.324     6.204    TW/y0i_r[3]_i_112_n_0
+    SLICE_X26Y218        LUT5 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.134     6.338 f  TW/y0i_r[3]_i_194/O
+                         net (fo=4, routed)           0.113     6.451    TW/y0i_r[3]_i_194_n_0
+    SLICE_X26Y218        LUT5 (Prop_H5LUT_SLICEL_I4_O)
+                                                      0.142     6.593 r  TW/y0i_r[3]_i_160/O
+                         net (fo=1, routed)           0.212     6.805    TW/y0i_r[3]_i_160_n_0
+    SLICE_X26Y218        LUT6 (Prop_F6LUT_SLICEL_I4_O)
+                                                      0.133     6.938 r  TW/y0i_r[3]_i_90/O
+                         net (fo=13, routed)          0.507     7.445    TW/BF/sc_ti[4]
+    SLICE_X27Y233        LUT5 (Prop_D6LUT_SLICEL_I4_O)
+                                                      0.089     7.534 f  TW/y0i_r[3]_i_42/O
+                         net (fo=4, routed)           0.241     7.775    TW/y0i_r[3]_i_42_n_0
+    SLICE_X27Y228        LUT2 (Prop_C6LUT_SLICEL_I1_O)
+                                                      0.047     7.822 r  TW/y1i_r[3]_i_26/O
+                         net (fo=1, routed)           0.013     7.835    TW/y1i_r[3]_i_26_n_0
+    SLICE_X27Y228        CARRY8 (Prop_CARRY8_SLICEL_S[2]_CO[3])
+                                                      0.128     7.963 f  TW/y1i_r_reg[3]_i_19/CO[3]
+                         net (fo=10, routed)          0.134     8.097    TW/BF/SUB_y1i/sign_l20_in
+    SLICE_X27Y229        LUT6 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.114     8.211 f  TW/y1i_r[3]_i_11/O
+                         net (fo=28, routed)          0.453     8.664    TW/y1i_r[3]_i_11_n_0
+    SLICE_X25Y231        LUT2 (Prop_A5LUT_SLICEM_I1_O)
+                                                      0.146     8.810 r  TW/y1i_r[3]_i_5/O
+                         net (fo=8, routed)           0.358     9.168    TW/y1i_r[3]_i_5_n_0
+    SLICE_X25Y231        LUT5 (Prop_B6LUT_SLICEM_I0_O)
+                                                      0.136     9.304 r  TW/y1i_r[2]_i_51/O
+                         net (fo=1, routed)           0.147     9.451    TW/y1i_r[2]_i_51_n_0
+    SLICE_X25Y233        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.115     9.566 r  TW/y1i_r[2]_i_27/O
+                         net (fo=6, routed)           0.203     9.769    TW/y1i_r[2]_i_27_n_0
+    SLICE_X25Y236        LUT4 (Prop_H5LUT_SLICEM_I1_O)
+                                                      0.060     9.829 r  TW/y1i_r[2]_i_50/O
+                         net (fo=1, routed)           0.150     9.979    TW/y1i_r[2]_i_50_n_0
+    SLICE_X25Y236        LUT6 (Prop_D6LUT_SLICEM_I4_O)
+                                                      0.047    10.026 r  TW/y1i_r[2]_i_26/O
+                         net (fo=14, routed)          0.167    10.192    TW/y1i_r[2]_i_26_n_0
+    SLICE_X25Y234        LUT5 (Prop_B6LUT_SLICEM_I1_O)
+                                                      0.136    10.328 r  TW/y1i_r[2]_i_42/O
+                         net (fo=3, routed)           0.100    10.428    TW/y1i_r[2]_i_42_n_0
+    SLICE_X25Y233        LUT6 (Prop_D6LUT_SLICEM_I3_O)
+                                                      0.133    10.561 r  TW/y1i_r[2]_i_22/O
+                         net (fo=1, routed)           0.093    10.654    TW/y1i_r[2]_i_22_n_0
+    SLICE_X25Y235        LUT5 (Prop_F6LUT_SLICEM_I1_O)
+                                                      0.114    10.768 r  TW/y1i_r[2]_i_11/O
+                         net (fo=4, routed)           0.251    11.019    TW/BF/m_y1i[2]
+    SLICE_X26Y231        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.135    11.154 f  TW/y1i_r[1]_i_2/O
+                         net (fo=2, routed)           0.159    11.313    TW/y1i_r[1]_i_2_n_0
+    SLICE_X26Y230        LUT5 (Prop_D5LUT_SLICEL_I4_O)
+                                                      0.141    11.454 r  TW/y1i_r[0]_i_1/O
+                         net (fo=1, routed)           0.228    11.682    y1i[0]
+    SLICE_X26Y228        FDCE                                         r  y1i_r_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)  100.000   100.000 r  
+    E5                                                0.000   100.000 r  clk (IN)
+                         net (fo=0)                   0.000   100.000    clk_IBUF_inst/I
+    E5                   INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.255   100.255 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000   100.255    clk_IBUF_inst/OUT
+    E5                   IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000   100.255 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.279   100.534    clk_IBUF
+    BUFGCE_X0Y86         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024   100.558 r  clk_IBUF_BUFG_inst/O
+    X1Y3 (CLOCK_ROOT)    net (fo=99, routed)          0.576   101.133    clk_IBUF_BUFG
+    SLICE_X26Y228        FDCE                                         r  y1i_r_reg[0]/C
+                         clock pessimism              0.258   101.391    
+                         clock uncertainty           -0.035   101.356    
+    SLICE_X26Y228        FDCE (Setup_EFF_SLICEL_C_D)
+                                                      0.023   101.379    y1i_r_reg[0]
+  -------------------------------------------------------------------
+                         required time                        101.379    
+                         arrival time                         -11.682    
+  -------------------------------------------------------------------
+                         slack                                 89.697    
+
+
+
+

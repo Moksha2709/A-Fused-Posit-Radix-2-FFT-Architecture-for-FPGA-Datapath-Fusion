@@ -1,0 +1,100 @@
+STAGE 0 | butterfly=0 | pos=0 | addr_a=0 | addr_b=1 | tw_addr_r=0
+  INPUTS : A = 256 + j0   B = 245 + j0
+  OUTPUTS: Y0 = 314 + j0   Y1 = 76 + j0
+STAGE 0 | butterfly=1 | pos=0 | addr_a=2 | addr_b=3 | tw_addr_r=0
+  INPUTS : A = 938 + j0   B = 792 + j0
+  OUTPUTS: Y0 = 779 + j0   Y1 = 218 + j0
+STAGE 0 | butterfly=2 | pos=0 | addr_a=4 | addr_b=5 | tw_addr_r=0
+  INPUTS : A = 245 + j0   B = 832 + j0
+  OUTPUTS: Y0 = 170 + j0   Y1 = 282 + j0
+STAGE 0 | butterfly=3 | pos=0 | addr_a=6 | addr_b=7 | tw_addr_r=0
+  INPUTS : A = 792 + j0   B = 938 + j0
+  OUTPUTS: Y0 = 779 + j0   Y1 = 806 + j0
+STAGE 0 | butterfly=4 | pos=0 | addr_a=8 | addr_b=9 | tw_addr_r=0
+  INPUTS : A = 0 + j0   B = 0 + j0
+  OUTPUTS: Y0 = 0 + j0   Y1 = 0 + j0
+  WRITE  : RAM[8] <= 0 + j0
+STAGE 0 | butterfly=5 | pos=0 | addr_a=10 | addr_b=11 | tw_addr_r=0
+  INPUTS : A = 0 + j0   B = 0 + j0
+  OUTPUTS: Y0 = 0 + j0   Y1 = 0 + j0
+STAGE 0 | butterfly=6 | pos=0 | addr_a=12 | addr_b=13 | tw_addr_r=0
+  INPUTS : A = 0 + j0   B = 0 + j0
+  OUTPUTS: Y0 = 0 + j0   Y1 = 0 + j0
+STAGE 0 | butterfly=7 | pos=0 | addr_a=14 | addr_b=15 | tw_addr_r=0
+  INPUTS : A = 0 + j0   B = 0 + j0
+  OUTPUTS: Y0 = 0 + j0   Y1 = 0 + j0
+STAGE 1 | butterfly=0 | pos=0 | addr_a=0 | addr_b=2 | tw_addr_r=0
+  INPUTS : A = 314 + j0   B = 779 + j0
+  OUTPUTS: Y0 = 255 + j0   Y1 = 346 + j0
+STAGE 1 | butterfly=1 | pos=1 | addr_a=1 | addr_b=3 | tw_addr_r=4
+  INPUTS : A = 76 + j0   B = 218 + j0
+  OUTPUTS: Y0 = 76 + j806   Y1 = 76 + j218
+STAGE 1 | butterfly=2 | pos=0 | addr_a=4 | addr_b=6 | tw_addr_r=0
+  INPUTS : A = 170 + j0   B = 779 + j0
+  OUTPUTS: Y0 = 832 + j0   Y1 = 277 + j0
+STAGE 1 | butterfly=3 | pos=1 | addr_a=5 | addr_b=7 | tw_addr_r=4
+  INPUTS : A = 282 + j0   B = 806 + j0
+  OUTPUTS: Y0 = 282 + j218   Y1 = 282 + j806
+STAGE 1 | butterfly=4 | pos=0 | addr_a=8 | addr_b=10 | tw_addr_r=0
+  INPUTS : A = 0 + j0   B = 0 + j0
+  OUTPUTS: Y0 = 0 + j0   Y1 = 0 + j0
+  WRITE  : RAM[8] <= 0 + j0
+STAGE 1 | butterfly=5 | pos=1 | addr_a=9 | addr_b=11 | tw_addr_r=4
+  INPUTS : A = 0 + j0   B = 0 + j0
+  OUTPUTS: Y0 = 0 + j0   Y1 = 0 + j0
+STAGE 1 | butterfly=6 | pos=0 | addr_a=12 | addr_b=14 | tw_addr_r=0
+  INPUTS : A = 0 + j0   B = 0 + j0
+  OUTPUTS: Y0 = 0 + j0   Y1 = 0 + j0
+STAGE 1 | butterfly=7 | pos=1 | addr_a=13 | addr_b=15 | tw_addr_r=4
+  INPUTS : A = 0 + j0   B = 0 + j0
+  OUTPUTS: Y0 = 0 + j0   Y1 = 0 + j0
+STAGE 2 | butterfly=0 | pos=0 | addr_a=0 | addr_b=4 | tw_addr_r=0
+  INPUTS : A = 255 + j0   B = 832 + j0
+  OUTPUTS: Y0 = 190 + j0   Y1 = 287 + j0
+STAGE 2 | butterfly=1 | pos=1 | addr_a=1 | addr_b=5 | tw_addr_r=2
+  INPUTS : A = 76 + j806   B = 282 + j218
+  OUTPUTS: Y0 = 292 + j756   Y1 = 743 + j907
+STAGE 2 | butterfly=2 | pos=2 | addr_a=2 | addr_b=6 | tw_addr_r=4
+  INPUTS : A = 346 + j0   B = 277 + j0
+  OUTPUTS: Y0 = 346 + j747   Y1 = 346 + j277
+STAGE 2 | butterfly=3 | pos=3 | addr_a=3 | addr_b=7 | tw_addr_r=6
+  INPUTS : A = 76 + j218   B = 282 + j806
+  OUTPUTS: Y0 = 743 + j117   Y1 = 292 + j268
+STAGE 2 | butterfly=4 | pos=0 | addr_a=8 | addr_b=12 | tw_addr_r=0
+  INPUTS : A = 0 + j0   B = 0 + j0
+  OUTPUTS: Y0 = 0 + j0   Y1 = 0 + j0
+  WRITE  : RAM[8] <= 0 + j0
+STAGE 2 | butterfly=5 | pos=1 | addr_a=9 | addr_b=13 | tw_addr_r=2
+  INPUTS : A = 0 + j0   B = 0 + j0
+  OUTPUTS: Y0 = 0 + j0   Y1 = 0 + j0
+STAGE 2 | butterfly=6 | pos=2 | addr_a=10 | addr_b=14 | tw_addr_r=4
+  INPUTS : A = 0 + j0   B = 0 + j0
+  OUTPUTS: Y0 = 0 + j0   Y1 = 0 + j0
+STAGE 2 | butterfly=7 | pos=3 | addr_a=11 | addr_b=15 | tw_addr_r=6
+  INPUTS : A = 0 + j0   B = 0 + j0
+  OUTPUTS: Y0 = 0 + j0   Y1 = 0 + j0
+STAGE 3 | butterfly=0 | pos=0 | addr_a=0 | addr_b=8 | tw_addr_r=0
+  INPUTS : A = 190 + j0   B = 0 + j0
+  OUTPUTS: Y0 = 190 + j0   Y1 = 190 + j0
+           RAM[8] <= 190 + j0
+STAGE 3 | butterfly=1 | pos=1 | addr_a=1 | addr_b=9 | tw_addr_r=1
+  INPUTS : A = 292 + j756   B = 0 + j0
+  OUTPUTS: Y0 = 292 + j756   Y1 = 292 + j756
+STAGE 3 | butterfly=2 | pos=2 | addr_a=2 | addr_b=10 | tw_addr_r=2
+  INPUTS : A = 346 + j747   B = 0 + j0
+  OUTPUTS: Y0 = 346 + j747   Y1 = 346 + j747
+STAGE 3 | butterfly=3 | pos=3 | addr_a=3 | addr_b=11 | tw_addr_r=3
+  INPUTS : A = 743 + j117   B = 0 + j0
+  OUTPUTS: Y0 = 743 + j117   Y1 = 743 + j117
+STAGE 3 | butterfly=4 | pos=4 | addr_a=4 | addr_b=12 | tw_addr_r=4
+  INPUTS : A = 287 + j0   B = 0 + j0
+  OUTPUTS: Y0 = 287 + j0   Y1 = 287 + j0
+STAGE 3 | butterfly=5 | pos=5 | addr_a=5 | addr_b=13 | tw_addr_r=5
+  INPUTS : A = 743 + j907   B = 0 + j0
+  OUTPUTS: Y0 = 743 + j907   Y1 = 743 + j907
+STAGE 3 | butterfly=6 | pos=6 | addr_a=6 | addr_b=14 | tw_addr_r=6
+  INPUTS : A = 346 + j277   B = 0 + j0
+  OUTPUTS: Y0 = 346 + j277   Y1 = 346 + j277
+STAGE 3 | butterfly=7 | pos=7 | addr_a=7 | addr_b=15 | tw_addr_r=7
+  INPUTS : A = 292 + j268   B = 0 + j0
+  OUTPUTS: Y0 = 292 + j268   Y1 = 292 + j268

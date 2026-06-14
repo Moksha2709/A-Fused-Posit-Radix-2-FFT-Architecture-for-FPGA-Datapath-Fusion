@@ -1,0 +1,155 @@
+<mxfile host="app.diagrams.net" agent="5.0">
+  <diagram id="diagram_1" name="Posit Butterfly Architectures">
+    <mxGraphModel dx="1717" dy="1038" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1350" pageHeight="1250" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t1" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" value="CONVENTIONAL BUTTERFLY ARCHITECTURE&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="380" x="460" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c_in_a" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontColor=#1976D2;" value="ar, ai" vertex="1">
+          <mxGeometry height="30" width="50" x="30" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="c_in_b" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontColor=#333333;" value="br, bi" vertex="1">
+          <mxGeometry height="30" width="50" x="100" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="c_in_w" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontColor=#333333;" value="wr, wi" vertex="1">
+          <mxGeometry height="30" width="50" x="100" y="325" as="geometry" />
+        </mxCell>
+        <mxCell id="c_mul" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#7b1fa2;strokeWidth=2;fontColor=#4a148c;" value="&lt;b&gt;4x Posit Multipliers&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;&lt;i&gt;Contains:&lt;/i&gt;&lt;br/&gt;&lt;font color=&quot;#d32f2f&quot;&gt;8x Decoders&lt;/font&gt;&lt;br/&gt;4x Raw Multipliers&lt;br/&gt;&lt;font color=&quot;#e65100&quot;&gt;4x Encoders&lt;/font&gt;" vertex="1">
+          <mxGeometry height="120" width="150" x="180" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="c_addsub_t" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;strokeWidth=2;fontColor=#1b5e20;" value="&lt;b&gt;2x Posit Add/Sub (Tr, Ti)&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;&lt;i&gt;Contains:&lt;/i&gt;&lt;br/&gt;&lt;font color=&quot;#d32f2f&quot;&gt;4x Decoders&lt;/font&gt;&lt;br/&gt;2x Raw Add/Sub&lt;br/&gt;&lt;font color=&quot;#e65100&quot;&gt;2x Encoders&lt;/font&gt;" vertex="1">
+          <mxGeometry height="120" width="180" x="440" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="c_add_y0" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;strokeWidth=2;fontColor=#1b5e20;" value="&lt;b&gt;2x Posit Add (Y0 = A + T)&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;&lt;i&gt;Contains:&lt;/i&gt;&lt;br/&gt;&lt;font color=&quot;#d32f2f&quot;&gt;4x Decoders&lt;/font&gt;&lt;br/&gt;2x Raw Adders&lt;br/&gt;&lt;font color=&quot;#e65100&quot;&gt;2x Encoders&lt;/font&gt;" vertex="1">
+          <mxGeometry height="120" width="180" x="700" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sub_y1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;strokeWidth=2;fontColor=#1b5e20;" value="&lt;b&gt;2x Posit Sub (Y1 = A - T)&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;&lt;i&gt;Contains:&lt;/i&gt;&lt;br/&gt;&lt;font color=&quot;#d32f2f&quot;&gt;4x Decoders&lt;/font&gt;&lt;br/&gt;2x Raw Subtractors&lt;br/&gt;&lt;font color=&quot;#e65100&quot;&gt;2x Encoders&lt;/font&gt;" vertex="1">
+          <mxGeometry height="120" width="180" x="700" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="c_out_y0" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontColor=#333333;" value="y0_r, y0_i" vertex="1">
+          <mxGeometry height="30" width="70" x="940" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="c_out_y1" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontColor=#333333;" value="y1_r, y1_i" vertex="1">
+          <mxGeometry height="30" width="70" x="940" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="e_c_br_mul" edge="1" parent="1" source="c_in_b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="c_mul" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_c_wi_mul" edge="1" parent="1" source="c_in_w" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="c_mul" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_c_mul_t" edge="1" parent="1" source="c_mul" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;verticalAlign=bottom;" target="c_addsub_t" value="m1, m2, m3, m4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_c_t_y0" edge="1" parent="1" source="c_addsub_t" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="c_add_y0" value="Tr, Ti">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_c_t_y1" edge="1" parent="1" source="c_addsub_t" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="c_sub_y1" value="Tr, Ti">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_c_ar_y0" edge="1" parent="1" source="c_in_a" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#1976D2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="c_add_y0" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="90" y="100" />
+              <mxPoint x="90" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_c_ar_y1" edge="1" parent="1" source="c_in_a" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#1976D2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="c_sub_y1" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="90" y="100" />
+              <mxPoint x="90" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_c_y0_out" edge="1" parent="1" source="c_add_y0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c_out_y0" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_c_y1_out" edge="1" parent="1" source="c_sub_y1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c_out_y1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t2" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" value="FUSED BUTTERFLY ARCHITECTURE&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="310" x="495" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="f_in_a" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontColor=#333333;" value="ar, ai" vertex="1">
+          <mxGeometry height="30" width="50" x="40" y="725" as="geometry" />
+        </mxCell>
+        <mxCell id="f_in_b" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontColor=#333333;" value="br, bi" vertex="1">
+          <mxGeometry height="30" width="50" x="40" y="825" as="geometry" />
+        </mxCell>
+        <mxCell id="f_in_w" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontColor=#333333;" value="wr, wi" vertex="1">
+          <mxGeometry height="30" width="50" x="40" y="925" as="geometry" />
+        </mxCell>
+        <mxCell id="f_dec" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6e6;strokeColor=#cc0000;strokeWidth=2;fontColor=#4d0000;" value="&lt;b&gt;6x Posit Decoders&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;&lt;i&gt;Inputs:&lt;/i&gt; ar, ai, br, bi, wr, wi&lt;br/&gt;&lt;br/&gt;&lt;i&gt;Outputs:&lt;/i&gt; Raw Formats&lt;br/&gt;(sign, scale, mantissa)" vertex="1">
+          <mxGeometry height="240" width="140" x="120" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="f_mul" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#7b1fa2;strokeWidth=2;fontColor=#4a148c;" value="&lt;b&gt;4x Raw Multipliers&lt;/b&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="120" x="380" y="824" as="geometry" />
+        </mxCell>
+        <mxCell id="f_addsub_t" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;strokeWidth=2;fontColor=#1b5e20;" value="&lt;b&gt;2x Raw Add/Sub&lt;/b&gt;&lt;br&gt;(Calculates Tr, Ti)" vertex="1">
+          <mxGeometry height="100" width="150" x="590" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="f_add_y0" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;strokeWidth=2;fontColor=#1b5e20;" value="&lt;b&gt;2x Raw Add&lt;/b&gt;&lt;br&gt;(Y0 = A + T)" vertex="1">
+          <mxGeometry height="100" width="160" x="800" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="f_sub_y1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;strokeWidth=2;fontColor=#1b5e20;" value="&lt;b&gt;2x Raw Sub&lt;/b&gt;&lt;br&gt;(Y1 = A - T)&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="160" x="800" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="f_enc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#ef6c00;strokeWidth=2;fontColor=#e65100;" value="&lt;b&gt;4x Posit Encoders&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;i&gt;Outputs:&lt;/i&gt; Encoded Posits" vertex="1">
+          <mxGeometry height="200" width="140" x="1050" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="f_out_y0" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontColor=#333333;" value="y0_r, y0_i" vertex="1">
+          <mxGeometry height="30" width="70" x="1200" y="825" as="geometry" />
+        </mxCell>
+        <mxCell id="f_out_y1" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontColor=#333333;" value="y1_r, y1_i" vertex="1">
+          <mxGeometry height="30" width="70" x="1200" y="925" as="geometry" />
+        </mxCell>
+        <mxCell id="e_f_ar_dec" edge="1" parent="1" source="f_in_a" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.083;entryDx=0;entryDy=0;entryPerimeter=0;" target="f_dec" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_f_br_dec" edge="1" parent="1" source="f_in_b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="f_dec" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_f_wr_dec" edge="1" parent="1" source="f_in_w" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.917;entryDx=0;entryDy=0;entryPerimeter=0;" target="f_dec" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_f_dec_mul" edge="1" parent="1" source="f_dec" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.583;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="f_mul" value="raw br, bi, wr, wi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_f_mul_t" edge="1" parent="1" source="f_mul" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="f_addsub_t" value="mm1-mm4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_f_t_y0" edge="1" parent="1" source="f_addsub_t" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="f_add_y0" value="raw Tr, Ti">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_f_t_y1" edge="1" parent="1" source="f_addsub_t" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="f_sub_y1" value="raw Tr, Ti">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_f_dec_y0" edge="1" parent="1" source="f_dec" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#1976D2;exitX=1;exitY=0.083;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="f_add_y0" value="raw ar, ai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_f_dec_y1" edge="1" parent="1" source="f_dec" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#1976D2;exitX=1;exitY=0.917;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="f_sub_y1" value="raw ar, ai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_f_y0_enc" edge="1" parent="1" source="f_add_y0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="f_enc" value="raw Y0 (r &amp; i)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_f_y1_enc" edge="1" parent="1" source="f_sub_y1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="f_enc" value="raw Y1 (r &amp; i)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_f_enc_y0" edge="1" parent="1" source="f_enc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="f_out_y0" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_f_enc_y1" edge="1" parent="1" source="f_enc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#4D4D4D;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="f_out_y1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KJCL5bxqpY9E3fwOdfzJ-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D9E3F0;strokeColor=#7F9DBF;fontSize=18;fontStyle=1;" value="" vertex="1">
+          <mxGeometry height="30" width="260" x="1280" y="180" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
